@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- start agents  -->
+    <section class="agent-section">
+        <div class="agents">
+            <div class="agents__new__img-box">
+                <div>
+                    <img src="{% static '/img/agent-1.png' %}" alt="agent 1">
+                </div>
+
+                <div>
+                    <img src="{% static '/img/agent-2.png' %}" alt="agent 2">
+                </div>
+
+                <div>
+                    <img src="{% static '/img/agent-2.png' %}" alt="agent 2">
+                </div>
+            </div>
+            <div class="agents__new__img-box">
+                <div>
+                    <img src="{% static '/img/agent-1.png' %}" alt="agent 1">
+                </div>
+
+                <div>
+                    <img src="{% static '/img/agent-2.png' %}" alt="agent 2">
+                </div>
+
+                <div>
+                    <img src="{% static '/img/agent-2.png' %}" alt="agent 2">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end agents  -->
+{% endblock %}

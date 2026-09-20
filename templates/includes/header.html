@@ -7,7 +7,7 @@
         <nav class="navbar__list">
             <ul>
                 <li>
-                    <a href="#" type="active">Home</a>
+                    <a href="{% url 'home:home' %}" type="active">Home</a>
                 </li>
                 <li>
                     <a href="{% url 'about:about' %}">About</a>
@@ -19,7 +19,7 @@
                     <a href="#">Listing</a>
                 </li>
                 <li>
-                    <a href="#">agents</a>
+                    <a href="{% url 'property:agent' %}">agents</a>
                 </li>
                 <li>
                     <a href="{% url 'contactus:contactus' %}">contact</a>

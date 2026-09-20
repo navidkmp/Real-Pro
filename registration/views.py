@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 
 def signup(request):
     if request.user.is_authenticated == True:
-        return redirect("about:about")
+        return redirect("home:home")
     if request.method == 'POST':
         username = request.POST.get('username')
         email = request.POST.get('email')
@@ -39,7 +39,7 @@ def signup(request):
 
 def signin(request):
     if request.user.is_authenticated == True:
-        return redirect("about:about")
+        return redirect("home:home")
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
