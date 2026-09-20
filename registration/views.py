@@ -35,7 +35,6 @@ def signup(request):
     return render(request, 'registration/signup.html')
 
 
-
 def signin(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -58,3 +57,5 @@ def signin(request):
     return render(request, 'registration/signin.html')
 
 
+def forget_pass(request):
+    return render(request, 'registration/password_reset/forget.html')
