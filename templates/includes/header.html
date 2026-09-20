@@ -7,7 +7,7 @@
         <nav class="navbar__list">
             <ul>
                 <li>
-                    <a href="{% url 'home:home' %}" type="active">Home</a>
+                    <a href="{% url 'home:home' %}" class="active">Home</a>
                 </li>
                 <li>
                     <a href="{% url 'about:about' %}">About</a>
@@ -48,3 +48,38 @@
         </button>
     </div>
 </header><!--
+
+
+  <header>
+    <div class="wrap nav-row">
+      <a class="logo" href="#top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 21h18M5 21V7l6-4 6 4v14M9 21v-6h4v6" />
+        </svg>
+        RealPro
+      </a>
+      <nav class="main">
+        <a href="#top">Home</a>
+        <a href="#top" class="active">Listing</a>
+        <a href="#reviews">Contact</a>
+        <a href="#top">Agents</a>
+        <a href="#top">About</a>
+        <a href="#top">Blog</a>
+      </nav>
+      <div class="nav-right">
+        <a href="#top" style="font-size:.86rem;font-weight:600;color:var(--gray);">Sign Up</a>
+        <a class="btn btn-solid" href="#top">Create a Listing</a>
+        <div class="icon-circle">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="9" cy="21" r="1" />
+            <circle cx="20" cy="21" r="1" />
+            <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
+          </svg>
+        </div>
+        <button class="mobile-toggle"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.8">
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg></button>
+      </div>
+    </div>
+  </header>
