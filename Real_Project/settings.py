@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     #myapps
     'registration.apps.RegistrationConfig',
     'about.apps.AboutConfig',
+    'contactus.apps.ContactusConfig',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- start contact us  -->
+    <section class="contact-section">
+        <div class="contact">
+            <div class="contact__img-box">
+                <img src="{% static '/img/contact/contact-img-1.png' %}" alt="contactus image">
+            </div>
+
+            <div class="contact__login-box">
+                <!-- contact form header  -->
+                <header class="contact__login__header">
+
+                    <h1 class="contact__login__title">
+                        Get in touch
+                    </h1>
+
+                    <p class="contact__login__description">
+                        Please enter your details to create a new account.
+                    </p>
+
+                </header>
+
+                <!-- form -->
+                <form action="" method="post" class="contact__login-form">
+                    {% csrf_token %}
+                    <div class="signup__field">
+                        <div class="signup__input-wrapper">
+
+                            <input class="signup__input" type="text" name="username" placeholder="UserName" required>
+
+                        </div>
+                    </div>
+
+                    <div class="signup__field">
+                        <div class="signup__input-wrapper">
+
+                            <input class="signup__input" type="email" name="email" placeholder="Email" required>
+
+                        </div>
+                    </div>
+
+                    <button class="signup__button" type="submit">
+                        SEND
+                    </button>
+                </form>
+
+                <!-- Privacy policy  -->
+                <p class="signup__login">
+                    By contacting us, you agree to your
+
+                    <a class="signup__login-link" href="login.html">
+                        Terms of Service
+                    </a>
+                    and
+                    <a class="signup__login-link" href="login.html">
+                        Privacy Policy
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- end contact us  -->
+
+    <!-- start contact map  -->
+    <section class="contactmap-section">
+        <div class="map">
+            <div class="map__text-box">
+                <h3 class="heading-3">Connecting near or far</h3>
+
+                <p class="map__description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus porta justo eget risus
+                    consectetur, non venenatis elit blandit. Mauris vehicula, libero a iaculis fringilla, ipsum ipsum
+                    tincidunt velit, ut convallis velit ante tincidunt dui.
+                </p>
+
+                <ul class="map__list">
+                    <li>IRAN, Tabriz</li>
+                    <li>Mobile:0990 098 0151 | 0914 390 2645</li>
+                   <li> <a>Email:www.elyardev@gmail.com</a></li>
+                    <a>Email:www.ndevx@gmail.com</a>
+                </ul>
+            </div>
+
+            <div>
+                <img src="{% static '/img/contact/contact-img-2.png' %}" alt="map image" class="map__img">
+            </div>
+        </div>
+    </section>
+    <!-- end contact map  -->
+{% endblock %}
