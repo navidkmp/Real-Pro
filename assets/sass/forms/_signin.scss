@@ -1,0 +1,326 @@
+.login {
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 3rem;
+
+    &__container {
+
+        width: 100%;
+        max-width: 78rem;
+
+        padding: 5rem 4rem 4.5rem;
+
+        border: 1px solid #ddd;
+        border-radius: 1.5rem;
+
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.06);
+    }
+
+    &__header {
+
+        text-align: center;
+
+        margin-bottom: 4.5rem;
+    }
+
+
+    &__title {
+
+        color: #17113d;
+
+        font-size: 5rem;
+        font-weight: 700;
+
+        margin-bottom: 1.8rem;
+    }
+
+
+    &__description {
+
+        color: #777;
+
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+
+
+    &__form {
+        width: 100%;
+    }
+
+
+    &__field {
+
+        margin-bottom: 2rem;
+
+        &--error {
+
+            .login__input-wrapper {
+                border-color: #b76b6b;
+            }
+        }
+    }
+
+    &__input-wrapper {
+
+        width: 100%;
+        height: 6.5rem;
+
+        display: flex;
+        align-items: center;
+
+        border: 1px solid #ddd;
+        border-radius: 1.4rem;
+
+        transition: border-color 0.2s ease;
+
+
+        &:focus-within {
+            border-color: #2358c5;
+        }
+    }
+
+    &__input {
+
+        width: 100%;
+        height: 100%;
+
+        padding: 0 2.5rem;
+
+        border: none;
+        outline: none;
+
+        background: transparent;
+
+        color: #333;
+
+        font-size: 2rem;
+
+
+        &::placeholder {
+            color: #777;
+        }
+    }
+
+    &__error {
+
+        display: flex;
+        align-items: center;
+
+        gap: 1rem;
+
+        margin-top: 1.2rem;
+
+        color: #a45d5d;
+
+        font-size: 1.8rem;
+        line-height: 1.4;
+
+
+        i {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__password-toggle {
+
+        flex-shrink: 0;
+
+        margin-right: 2rem;
+
+        border: none;
+        background: transparent;
+
+        color: #777;
+
+        font-size: 2rem;
+
+        cursor: pointer;
+    }
+
+    &__options {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin: 2rem 0 3.5rem;
+    }
+
+    &__remember {
+
+        display: flex;
+        align-items: center;
+
+        gap: 1.4rem;
+
+        cursor: pointer;
+
+        font-size: 2rem;
+    }
+
+
+    &__checkbox {
+
+        appearance: none;
+
+        width: 2.8rem;
+        height: 2.8rem;
+
+        border: 2px solid #aaa;
+        border-radius: 0.5rem;
+
+        cursor: pointer;
+
+        position: relative;
+
+
+        &:checked {
+
+            background-color: #2358c5;
+            border-color: #2358c5;
+
+
+            &::after {
+
+                content: "✓";
+
+                position: absolute;
+
+                top: 50%;
+                left: 50%;
+
+                transform: translate(-50%, -50%);
+
+                color: #fff;
+
+                font-size: 1.8rem;
+            }
+        }
+    }
+
+    &__forgot-link {
+
+        color: #555;
+
+        font-size: 2rem;
+
+        text-decoration: none;
+
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__button {
+
+        width: 100%;
+        height: 6.5rem;
+
+        border: none;
+        border-radius: 1.4rem;
+
+        background-color: #1554c7;
+
+        color: #fff;
+
+        font-size: 2rem;
+        font-weight: 700;
+
+        cursor: pointer;
+
+        transition: background-color 0.2s ease;
+
+
+        &:hover {
+            background-color: #1048ae;
+        }
+
+
+        &:active {
+            transform: scale(0.99);
+        }
+    }
+
+    &__register {
+
+        margin-top: 2.5rem;
+
+        text-align: center;
+
+        color: #555;
+
+        font-size: 2rem;
+    }
+
+
+    &__register-link {
+
+        margin-left: 0.5rem;
+
+        color: #173f82;
+
+        font-weight: 600;
+
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .login {
+        padding: 1.5rem;
+
+        &__container {
+            padding: 3.5rem 2rem 3rem;
+        }
+
+        &__title {
+            font-size: 3.8rem;
+        }
+
+        &__description {
+            font-size: 1.6rem;
+        }
+
+        &__input-wrapper {
+            height: 5.8rem;
+        }
+
+        &__input {
+            font-size: 1.7rem;
+        }
+
+        &__error {
+            font-size: 1.4rem;
+        }
+
+        &__options {
+            gap: 1rem;
+        }
+
+        &__remember,
+        &__forgot-link {
+            font-size: 1.5rem;
+        }
+
+        &__checkbox {
+            width: 2.3rem;
+            height: 2.3rem;
+        }
+
+        &__button {
+            height: 5.8rem;
+        }
+
+        &__register {
+            font-size: 1.6rem;
+        }
+    }
+}

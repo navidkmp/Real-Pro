@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+    end navbar  -->
+
+    <!-- start sign up  -->
+    <main class="signup">
+        <div class="signup__container">
+            <!-- Header -->
+            <header class="signup__header">
+                <h1 class="signup__title">
+                    Sign Up </h1>
+                <p class="signup__description">
+                    Please enter your details to create a new account. </p>
+            </header>
+            <!-- Form -->
+            <form method="POST" class="signup__form">
+                {% csrf_token %}
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+                <!-- Username -->
+                <div class="signup__field">
+                    <div class="signup__input-wrapper">
+                        <input class="signup__input" type="text" name="username" placeholder="UserName" required>
+                    </div>
+                </div>
+                <!-- Email -->
+                <div class="signup__field">
+                    <div class="signup__input-wrapper">
+                        <input class="signup__input" type="email" name="email" placeholder="Email" required>
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="signup__field">
+                    <div class="signup__input-wrapper">
+                        <input class="signup__input signup__input--password" type="password" name="password1" id="signup-password" placeholder="Password" required>
+                        <button class="signup__password-toggle" type="button" id="signup-password-toggle">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Repeat Password -->
+                <div class="signup__field">
+                    <div class="signup__input-wrapper">
+                        <input class="signup__input" type="password" name="password2" id="signup-repeat-password" placeholder="Repeat Password" required>
+                    </div>
+                </div>
+                <!-- Submit -->
+                <button class="signup__button" type="submit">
+                    Sign Up
+                </button>
+            </form>
+            <!-- Login -->
+            <p class="signup__login">
+                Are you a member? <a class="signup__login-link" href="{% url 'registration:signin' %}"> Login Now </a>
+            </p>
+        </div>
+    </main>
+    <!-- end sign up  -->
+
+{% endblock %}

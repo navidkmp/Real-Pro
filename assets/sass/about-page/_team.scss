@@ -1,0 +1,11 @@
+.team-section {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+.team {
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.8rem;
+}

@@ -1,0 +1,27 @@
+.story-section {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+.story {
+    padding: 8.6rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__text-box {
+        padding: 5.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.2rem;
+    }
+
+    &__title {
+        font-size: 4rem;
+        font-weight: bold;
+    }
+
+    &__text {
+        color: $color-general-3;
+        font-size: 1.6rem;
+    }
+}

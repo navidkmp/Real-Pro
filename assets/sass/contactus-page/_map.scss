@@ -1,0 +1,44 @@
+.contactmap-section {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+.map {
+    padding: 12.8rem 0 5.6rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6rem;
+
+    &__text-box {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    &__description {
+        margin-top: 1.5rem;
+        font-size: 1.8rem;
+        color: $color-general-3;
+        letter-spacing: 0.6px;
+    }
+
+    &__list {
+        margin-inline-start: 0;
+        list-style: none;
+        font-size: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3.5rem;
+    }
+
+    &__img {
+        width: 100%;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        transition: all 0.3s;
+
+        &:hover {
+            transform: scale(1.15);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    }
+}

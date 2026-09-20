@@ -1,0 +1,44 @@
+.details-section {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+.details {
+    &__top {
+        padding: 4.2rem 0;
+
+        span {
+            font-size: 1.6rem;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__text-box {
+        margin-top: 3.5rem;
+        margin-bottom: 3.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2.8rem;
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        color: $color-general-3;
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        font-weight: bold;
+        color: $color-general-2;
+    }
+}

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- start login  -->
+    <main class="login">
+        <div class="login__container">
+            <!-- Header -->
+            <header class="login__header">
+                <h1 class="login__title">
+                    Sign In </h1>
+                <p class="login__description">
+                    Please enter your information to proceed with login. </p>
+            </header>
+            <!-- Form -->
+            <form method="POST" class="login__form">
+                {% csrf_token %}
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+                <!-- Account -->
+                <div class="login__field login__field--error">
+                    <div class="login__input-wrapper">
+                        <input class="login__input" type="text" name="username" placeholder="Account">
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="login__field">
+                    <div class="login__input-wrapper">
+                        <input class="login__input" type="password" name="password" id="password" placeholder="Password">
+                        <button class="login__password-toggle" type="button" id="password-toggle" aria-label="Show password">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Options -->
+                <div class="login__options">
+                    <label class="login__remember"> <input class="login__checkbox" type="checkbox">
+                        <span class="login__remember-text">
+                            Remember Me
+                        </span> </label>
+                    <a class="login__forgot-link" href="forget-password.html"> Forgot Password? </a>
+                </div>
+                <!-- Submit -->
+                <button class="login__button" type="submit">
+                    Sign In
+                </button>
+            </form>
+            <!-- Register -->
+            <p class="login__register">
+                Not a member yet?
+                <a class="login__register-link" href="{% url 'registration:signup' %}"> Register Now </a>
+            </p>
+        </div>
+    </main>
+    <!-- end login  -->
+{% endblock %}

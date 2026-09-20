@@ -1,0 +1,19 @@
+.about-section {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+.about {
+    &__top {
+        padding: 4.2rem 0;
+
+        span {
+            font-size: 1.6rem;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}

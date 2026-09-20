@@ -1,0 +1,16 @@
+.agents {
+    padding: 8rem 0 2rem 0;
+
+    &__new__img-box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3.5rem;
+        margin-bottom: 6rem;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

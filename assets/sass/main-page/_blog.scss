@@ -1,0 +1,106 @@
+.blog-section {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+.blogs {
+    padding: 0 3rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3.6rem;
+    margin-bottom: 8rem;
+}
+
+.blog {
+    background-color: $color-white;
+    border-radius: 1.2rem;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    // حالت اولیه
+    opacity: 0;
+    transform: translateY(8rem);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+
+    // وقتی به سکشن رسیدیم
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    // تأخیر کارت‌ها
+    &:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    &:nth-child(2) {
+        transition-delay: 0.3s;
+    }
+
+    &:nth-child(3) {
+        transition-delay: 0.5s;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 24rem;
+        object-fit: cover;
+
+        transition: transform 0.5s ease;
+    }
+
+    &:hover &__img {
+        transform: scale(1.05);
+    }
+
+    &__text-box {
+        padding: 2.8rem 2.4rem 3rem;
+    }
+
+    .heading-6 {
+        margin-bottom: 2rem;
+        line-height: 1.4;
+    }
+
+    &__icon-box {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+
+        font-size: 1.3rem;
+        color: $color-general-2;
+
+        svg {
+            width: 1.6rem;
+            height: 1.6rem;
+            flex-shrink: 0;
+        }
+    }
+
+    &__text {
+        p {
+            margin: 0;
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: $color-general-2;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 5.6rem;
+    }
+}

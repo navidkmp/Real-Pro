@@ -1,0 +1,179 @@
+ .blog {
+     &__image {
+         margin: 8rem 0;
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 3.2rem;
+
+         // =========================
+         // MAIN IMAGE ANIMATION
+         // =========================
+
+         &-main {
+             width: 100%;
+
+             opacity: 0;
+             transform: translateX(-6rem);
+
+             animation: blogMainImage 1s ease-out forwards;
+
+             img {
+                 width: 100%;
+                 display: block;
+
+                 transition: transform 0.6s ease;
+             }
+
+             &:hover img {
+                 transform: scale(1.03);
+             }
+         }
+     }
+
+     &__image-box {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         gap: 1rem;
+     }
+
+     &__text-new {
+         display: flex;
+         align-items: center;
+         gap: 1.5rem;
+         border: 2px solid $color-general-6;
+         border-radius: 1.5rem;
+
+         // =========================
+         // SMALL BLOG CARDS
+         // =========================
+
+         opacity: 0;
+         transform: translateX(6rem);
+
+         animation: blogCardReveal 0.8s ease-out forwards;
+
+         transition:
+             transform 0.35s ease,
+             box-shadow 0.35s ease,
+             border-color 0.35s ease;
+
+         &:hover {
+             transform: translateX(-0.6rem);
+
+             box-shadow:
+                 rgba(0, 0, 0, 0.10) 0px 8px 24px;
+
+             border-color: $color-primary;
+         }
+
+         // کارت اول
+         &:nth-child(1) {
+             animation-delay: 0.3s;
+         }
+
+         // کارت دوم
+         &:nth-child(2) {
+             animation-delay: 0.5s;
+         }
+
+         // کارت سوم
+         &:nth-child(3) {
+             animation-delay: 0.7s;
+         }
+
+         img {
+             width: 40%;
+
+             transition: transform 0.5s ease;
+         }
+
+         &:hover img {
+             transform: scale(1.06);
+         }
+
+         &>div {
+             padding: 1rem;
+         }
+     }
+
+     &__pagination {
+         &__list {
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             gap: 3.5rem;
+             list-style: none;
+             font-size: 1.8rem;
+
+             li a {
+                 text-decoration: none;
+                 color: $color-general-3;
+
+                 transition:
+                     color 0.3s ease,
+                     transform 0.3s ease;
+
+                 &:hover {
+                     color: $color-primary;
+                 }
+             }
+         }
+     }
+ }
+
+
+ // ==========================================
+ // KEYFRAMES
+ // ==========================================
+
+ // عکس اصلی از سمت چپ
+ @keyframes blogMainImage {
+
+     0% {
+         opacity: 0;
+         transform: translateX(-6rem);
+     }
+
+     100% {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
+
+ // کارت‌ها از سمت راست
+ @keyframes blogCardReveal {
+
+     0% {
+         opacity: 0;
+         transform: translateX(6rem);
+     }
+
+     100% {
+         opacity: 1;
+         transform: translateX(0);
+     }
+ }
+
+
+ // ==========================================
+ // REDUCED MOTION
+ // ==========================================
+
+ @media (prefers-reduced-motion: reduce) {
+
+     .blog__image-main,
+     .blog__text-new {
+         animation: none;
+         opacity: 1;
+         transform: none;
+     }
+
+     .blog__image-main img,
+     .blog__text-new,
+     .blog__text-new img {
+         transition: none;
+     }
+ }

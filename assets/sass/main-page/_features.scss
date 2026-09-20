@@ -1,0 +1,128 @@
+.features-section {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+.features {
+    &__top {
+        padding: 4.2rem 0;
+
+        span {
+            font-size: 1.6rem;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        gap: 3.5rem;
+    }
+}
+
+.feature {
+    // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 2.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #E0E0E0;
+
+    &__title {
+        font-size: 2.8rem;
+        font-weight: bold;
+        margin: 2.4rem 0;
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        margin: 0 auto;
+    }
+
+    &__active {
+        color: $color-primary-light-3;
+    }
+}
+
+// 1200px
+@media (max-width: 75em) {
+    .features {
+        &__container {
+            gap: 2.4rem;
+        }
+    }
+
+    .feature {
+        padding: 2.4rem;
+
+        &__title {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+
+// 900px
+@media (max-width: 56.25em) {
+    .features {
+        &__top {
+            padding: 3rem 0;
+        }
+
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+
+    .feature {
+        padding: 2.4rem 2rem;
+
+        &__title {
+            font-size: 2.2rem;
+            margin: 2rem 0;
+        }
+    }
+}
+
+
+// 600px
+@media (max-width: 37.5em) {
+    .features-section {
+        padding: 0 1.6rem;
+    }
+
+    .features {
+        &__top {
+            padding: 2.5rem 0;
+            text-align: center;
+
+            span {
+                font-size: 1.5rem;
+            }
+        }
+
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 1.6rem;
+        }
+    }
+
+    .feature {
+        padding: 2.4rem 1.8rem;
+
+        &__title {
+            font-size: 2rem;
+            margin: 1.8rem 0;
+        }
+
+        &__text {
+            font-size: 1.5rem;
+        }
+    }
+}

@@ -1,0 +1,125 @@
+.shop-section {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+.shop {
+    &__container {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        gap: 2rem;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.2rem;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__img {
+            width: 90%;
+        }
+
+        &__title {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 1.4rem 0;
+        }
+
+        &__price {
+            font-size: 1.6rem;
+            font-weight: bold;
+            text-align: center;
+            color: $color-primary-light-2;
+        }
+    }
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__title {
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+
+    &__category {
+        padding: 3rem;
+        border: 1px solid $color-general-6;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+
+        &__list {
+            color: $color-general-3;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 1.2rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+
+            li {
+                list-style: none;
+            }
+        }
+    }
+
+    &__size {
+        padding: 3rem;
+        border: 1px solid $color-general-6;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+
+        &__list {
+            color: $color-general-3;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 1.2rem;
+            font-size: 1.6rem;
+            font-weight: bold;
+
+            li {
+                list-style: none;
+            }
+        }
+    }
+
+    &__tags {
+        padding: 3rem;
+        border: 1px solid $color-general-6;
+        border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        &__box {
+            margin-top: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+    }
+
+    &__tag {
+        font-size: 1.4rem;
+        background-color: $color-general-10;
+        color: $color-general-3;
+        padding: 1.2rem;
+        border-radius: 1rem;
+    }
+}
