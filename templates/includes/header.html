@@ -7,22 +7,21 @@
         <nav class="navbar__list">
             <ul>
                 <li>
-                    <a href="{% url 'home:home' %}" class="active">Home</a>
+                    <a href="{% url 'home:home' %}" class="{% if request.resolver_match.url_name == 'home' %}navbar__active{% endif %}">Home</a>
+                <li>
+                    <a href="{% url 'about:about' %}" class="{% if request.resolver_match.url_name == 'about' %}navbar__active{% endif %}">About</a>
                 </li>
                 <li>
-                    <a href="{% url 'about:about' %}">About</a>
+                    <a href="#" class="{% if request.resolver_match.url_name == 'Blog' %}navbar__active{% endif %}">Blog</a>
                 </li>
                 <li>
-                    <a href="#">blog</a>
+                    <a href="#" class="{% if request.resolver_match.url_name == 'Listing' %}navbar__active{% endif %}">Listing</a>
                 </li>
                 <li>
-                    <a href="#">Listing</a>
+                    <a href="{% url 'property:agent' %}" class="{% if request.resolver_match.url_name == 'agent' %}navbar__active{% endif %}">Agents</a>
                 </li>
                 <li>
-                    <a href="{% url 'property:agent' %}">agents</a>
-                </li>
-                <li>
-                    <a href="{% url 'contactus:contactus' %}">contact</a>
+                    <a href="{% url 'contactus:contactus' %}" class="{% if request.resolver_match.url_name == 'contactus' %}navbar__active{% endif %}">Contact</a>
                 </li>
             </ul>
         </nav>
