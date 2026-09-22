@@ -104,3 +104,149 @@
         margin-top: 5.6rem;
     }
 }
+
+// ─────────────────────────────────────
+// Tablet
+// ─────────────────────────────────────
+
+@media (max-width: 56.25em) {
+    .blog-section {
+        padding: 0 2rem;
+    }
+
+    .blogs {
+        padding: 0;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.5rem;
+        margin-bottom: 6rem;
+    }
+
+    .blog {
+        &__img {
+            height: 22rem;
+        }
+
+        &__text-box {
+            padding: 2.4rem 2rem 2.6rem;
+        }
+
+        .heading-6 {
+            margin-bottom: 1.6rem;
+        }
+
+        &__icon-box {
+            gap: 1.2rem;
+            margin-bottom: 1.6rem;
+        }
+
+        &__icon {
+            font-size: 1.2rem;
+        }
+
+        &__text {
+            p {
+                font-size: 1.4rem;
+            }
+        }
+
+        &__btn {
+            margin-top: 4rem;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────
+// Mobile
+// ─────────────────────────────────────
+
+@media (max-width: 37.5em) {
+    .blog-section {
+        padding: 0 1.6rem;
+    }
+
+    .blogs {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-bottom: 5rem;
+    }
+
+    .blog {
+        width: 100%;
+        max-width: 45rem;
+        justify-self: center;
+
+        &__img {
+            height: 24rem;
+        }
+
+        &__text-box {
+            padding: 2.4rem 2rem 2.8rem;
+        }
+
+        .heading-6 {
+            margin-bottom: 1.6rem;
+            line-height: 1.5;
+        }
+
+        &__icon-box {
+            gap: 1.2rem;
+            margin-bottom: 1.8rem;
+        }
+
+        &__icon {
+            font-size: 1.2rem;
+
+            svg {
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+
+        &__text {
+            p {
+                font-size: 1.4rem;
+                line-height: 1.8;
+            }
+        }
+
+        &__btn {
+            margin-top: 3.5rem;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────
+// Small Mobile
+// ─────────────────────────────────────
+
+@media (max-width: 25em) {
+    .blogs {
+        gap: 2.5rem;
+    }
+
+    .blog {
+        &__img {
+            height: 20rem;
+        }
+
+        &__text-box {
+            padding: 2rem 1.6rem 2.4rem;
+        }
+
+        &__icon-box {
+            gap: 1rem;
+        }
+
+        &__text {
+            p {
+                font-size: 1.3rem;
+            }
+        }
+
+        &__btn {
+            margin-top: 3rem;
+        }
+    }
+}

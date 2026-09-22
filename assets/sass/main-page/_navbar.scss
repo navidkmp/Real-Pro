@@ -5,12 +5,20 @@
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 0;
+
+    padding: 2rem 5.6rem;
     gap: 2rem;
-    position: relative;
+
+    background-color: $color-white;
 
     &__logo {
         width: 100%;
@@ -25,11 +33,13 @@
             align-items: center;
             gap: 2.8rem;
             list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
         a {
             text-decoration: none;
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: $color-general-1;
         }
@@ -40,8 +50,10 @@
             top: 100%;
             left: 0;
             right: 0;
+
             background-color: $color-white;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+
             padding: 2rem;
             z-index: 100;
 
@@ -60,6 +72,10 @@
         align-items: center;
     }
 
+    &__active {
+        color: $color-primary !important;
+    }
+
     // Hamburger
     &__menu {
         display: none;
@@ -71,9 +87,9 @@
     }
 }
 
-
+// RESPONSIVE
 // 900px
-@media (max-width: 56.25em) {
+@media (max-width: 75em) {
 
     .navbar {
         &__list {
@@ -95,7 +111,7 @@
     }
 
     .navbar {
-        padding: 1.6rem 0;
+        padding: 1.6rem 0.8rem;
 
         &__logo {
             max-width: 11rem;

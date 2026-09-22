@@ -4,6 +4,10 @@
 }
 
 .shop {
+    &__title {
+        padding: 0 2rem;
+    }
+
     &__container {
         display: grid;
         grid-template-columns: 3fr 1fr;
@@ -17,6 +21,7 @@
     }
 
     &__item {
+        margin-top: 5rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -41,7 +46,7 @@
     }
 }
 
-.cart {
+.shop__cart {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -100,6 +105,7 @@
     }
 
     &__tags {
+        margin: 5rem 0;
         padding: 3rem;
         border: 1px solid $color-general-6;
         border-radius: 1rem;

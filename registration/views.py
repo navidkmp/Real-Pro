@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 
 def signup(request):
@@ -21,28 +21,25 @@ def signup(request):
                 'error': 'Username already exists.'
             })
 
-        if User.objects.filter(email=email).exists():
-            return render(request, 'registration/signup.html', {
-                'error': 'Email already exists.'
-            })
-
         user = User.objects.create_user(
             username=username,
             email=email,
             password=password1
         )
-
-        return redirect('registration:signin')
+        login(request, user)
+        return redirect('home:home')
 
     return render(request, 'registration/signup.html')
 
 
 def signin(request):
-    if request.user.is_authenticated == True:
+    if request.user.is_authenticated:
         return redirect("home:home")
+
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+        remember_me = request.POST.get('remember_me')
 
         user = authenticate(
             request,
@@ -52,7 +49,13 @@ def signin(request):
 
         if user is not None:
             login(request, user)
-            return redirect('registration:signin')
+
+            if remember_me:
+                request.session.set_expiry(60 * 60 * 24 * 30)
+            else:
+                request.session.set_expiry(0)
+
+            return redirect('home:home')
 
         return render(request, 'registration/signin.html', {
             'error': 'Invalid username or password.'
@@ -61,5 +64,13 @@ def signin(request):
     return render(request, 'registration/signin.html')
 
 
+
+
 def forget_pass(request):
     return render(request, 'registration/password_reset/forget.html')
+
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('home:home')

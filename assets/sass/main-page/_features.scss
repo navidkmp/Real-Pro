@@ -4,8 +4,10 @@
 }
 
 .features {
+    padding: 5.6rem 2rem 7rem 2rem;
+
     &__top {
-        padding: 4.2rem 0;
+        padding: 4.2rem 2rem;
 
         span {
             font-size: 1.6rem;
@@ -25,7 +27,6 @@
 }
 
 .feature {
-    // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 2.8rem;
     display: flex;
     flex-direction: column;
@@ -41,7 +42,7 @@
 
     &__text {
         font-size: 1.6rem;
-        margin: 0 auto;
+        text-align: center;
     }
 
     &__active {
@@ -71,7 +72,7 @@
 @media (max-width: 56.25em) {
     .features {
         &__top {
-            padding: 3rem 0;
+            padding: 3rem 1.6rem;
         }
 
         &__container {
@@ -81,10 +82,10 @@
     }
 
     .feature {
-        padding: 2.4rem 2rem;
+        padding: 2.4rem 5rem;
 
         &__title {
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin: 2rem 0;
         }
     }

@@ -4,12 +4,15 @@
 }
 
 .contact {
-    padding: 8rem 0;
+    padding: 8rem 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 3rem;
 
     &__img-box {
         img {
+            border-radius: 1rem;
+            width: 100%;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         }
     }
@@ -45,5 +48,111 @@
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+    }
+}
+
+// RESPONSIVE
+// TABLET
+@media (max-width: 56.25em) {
+    .contact-section {
+        padding: 0 2rem;
+    }
+
+    .contact {
+        padding: 6rem 0;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+
+        &__img-box {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__login-box {
+            padding: 2.5rem 2rem;
+            gap: 1.6rem;
+        }
+
+        &__login__title {
+            font-size: 3.2rem;
+        }
+
+        &__login__description {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        &__login-form {
+            gap: 1.3rem;
+        }
+    }
+}
+
+// MOBILE
+@media (max-width: 37.5em) {
+    .contact-section {
+        padding: 0 1.6rem;
+    }
+
+    .contact {
+        padding: 5rem 0;
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+
+        &__img-box {
+            width: 100%;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        &__login-box {
+            width: 100%;
+            padding: 2.5rem 2rem;
+            gap: 1.6rem;
+        }
+
+        &__login__title {
+            font-size: 2.8rem;
+            margin-bottom: 0;
+            text-align: center;
+        }
+
+        &__login__description {
+            font-size: 1.4rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        &__login-form {
+            gap: 1.3rem;
+        }
+    }
+}
+
+// SMALL MOBILE
+@media (max-width: 25em) {
+    .contact {
+        padding: 4rem 0;
+        gap: 2.5rem;
+
+        &__login-box {
+            padding: 2rem 1.5rem;
+        }
+
+        &__login__title {
+            font-size: 2.5rem;
+        }
+
+        &__login__description {
+            font-size: 1.3rem;
+        }
     }
 }

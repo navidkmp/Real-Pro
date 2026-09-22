@@ -4,8 +4,68 @@
 }
 
 .team {
+    max-width: 100rem;
     padding: 3rem 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.8rem;
+    margin: 0 auto;
+
+    &>* {
+        width: 100%;
+    }
+
+    &__img {
+        width: 80%;
+    }
+}
+
+// ─────────────────────────────────────
+// Tablet
+// ─────────────────────────────────────
+
+@media (max-width: 56.25em) {
+    .team-section {
+        padding: 0 3rem;
+    }
+
+    .team {
+        padding: 2.5rem 0;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 2.5rem;
+
+        &>* {
+            width: 100%;
+            max-width: 40rem;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────
+// Mobile
+// ─────────────────────────────────────
+
+@media (max-width: 37.5em) {
+    .team-section {
+        padding: 0 1.6rem;
+    }
+
+    .team {
+        padding: 2rem 0;
+        grid-template-columns: 1fr;
+        // gap: 3rem;
+    }
+}
+
+
+// ─────────────────────────────────────
+// Small Mobile
+// ─────────────────────────────────────
+
+@media (max-width: 25em) {
+    .team {
+        padding: 1.5rem 0;
+        gap: 2.5rem;
+    }
 }

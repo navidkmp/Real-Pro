@@ -4,7 +4,7 @@
 }
 
 .descover {
-    padding: 6rem 0;
+    padding: 6rem 2rem;
 
     &__top {
         padding: 4.2rem 0;
@@ -50,7 +50,7 @@
             height: 100%;
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
-            background: #fff;
+            background: $color-white;
         }
 
         &__front {
@@ -66,10 +66,11 @@
         }
 
         &__img {
+            border-radius: 1rem;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            flex: 1;
+            // flex: 1;
         }
 
         &__front-title {
@@ -124,136 +125,7 @@
     }
 }
 
-.descover-section {
-    max-width: 130rem;
-    margin: 0 auto;
-}
-
-.descover {
-    padding: 6rem 0;
-
-    &__top {
-        padding: 4.2rem 0;
-
-        span {
-            font-size: 1.6rem;
-        }
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    &__items {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 3.5rem;
-        margin-bottom: 8rem;
-    }
-
-    &__item {
-        perspective: 150rem;
-        height: 42rem;
-
-        &__inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transform-style: preserve-3d;
-            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-        }
-
-        &:hover &__inner {
-            transform: rotateY(180deg);
-        }
-
-        &__front,
-        &__back {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            -webkit-backface-visibility: hidden;
-            background: #fff;
-        }
-
-        &__front {
-            display: flex;
-            flex-direction: column;
-        }
-
-        &__back {
-            transform: rotateY(180deg);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        &__img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            flex: 1;
-        }
-
-        &__front-title {
-            padding: 1.5rem 2.2rem;
-        }
-
-        &__text-box {
-            padding: 2.2rem 0 0 2.2rem;
-        }
-
-        &__text {
-            margin-top: 1.2rem;
-            font-size: 1.6rem;
-            display: flex;
-            align-items: center;
-            gap: 0.7rem;
-        }
-    }
-
-    &__icon-box {
-        padding: 1.8rem 0 0 2.2rem;
-        display: flex;
-        align-items: center;
-        gap: 3.2rem;
-
-        span {
-            font-size: 1.6rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-    }
-
-    &__price-box {
-        padding: 2.8rem 0 0 2.2rem;
-        display: flex;
-        align-items: center;
-        gap: 1.8rem;
-        margin-bottom: 3.8rem;
-
-        span {
-            font-size: 2.4rem;
-            font-weight: bold;
-            color: $color-primary-light-2;
-        }
-    }
-
-    &__btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-
-// ========================================
-// 1200px
-// ========================================
+// BIG SCREEN
 @media (max-width: 75em) {
 
     .descover-section {
@@ -300,12 +172,8 @@
     }
 }
 
-
-// ========================================
-// 900px
-// ========================================
+// TABLEt
 @media (max-width: 56.25em) {
-
     .descover-section {
         padding: 0 2rem;
     }
@@ -322,9 +190,8 @@
         }
 
         &__items {
-            // دو کارت در هر ردیف
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
             margin-bottom: 5rem;
         }
 
@@ -366,12 +233,8 @@
     }
 }
 
-
-// ========================================
-// 600px
-// ========================================
+// MOBILE
 @media (max-width: 37.5em) {
-
     .descover-section {
         padding: 0 1.6rem;
     }
@@ -389,9 +252,8 @@
         }
 
         &__items {
-            // یک کارت در هر ردیف
             grid-template-columns: 1fr;
-            gap: 1.6rem;
+            gap: 5rem;
             margin-bottom: 4rem;
         }
 

@@ -117,3 +117,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+// SHOPPING CART
+const products = document.querySelectorAll('.product');
+
+
+products.forEach(function (product) {
+    const btnPlus = product.querySelector('.btn--plus');
+    const btnMin = product.querySelector('.btn--min');
+    const btnDel = product.querySelector('.btn--delete');
+    const countElement = product.querySelector('.count');
+
+    let count = 1;
+
+    // add
+    btnPlus.addEventListener('click', function () {
+        count++
+        countElement.textContent = count;
+    })
+
+    // min
+    btnMin.addEventListener('click', function () {
+        count--
+        countElement.textContent = count;
+        if (count === 0) {
+            product.remove();
+        }
+    })
+
+    // delete
+    btnDel.addEventListener('click', function () {
+        product.remove();
+    })
+})

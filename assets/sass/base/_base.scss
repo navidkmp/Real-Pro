@@ -24,10 +24,16 @@ $color-general-9: #EAEAEA;
 $color-general-10: #F2F2F2;
 
 // GENERAL SETTINGS
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
     font-size: 62.5%;
 }
 
 body {
     font-family: "Lato", sans-serif;
+    padding-top: 8rem;
 }

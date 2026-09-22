@@ -1,0 +1,145 @@
+.property-details-section {
+    max-width: 130rem;
+    margin: 0 auto;
+}
+
+.property-details {
+    padding: 5.6rem 0;
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__star {
+        margin-top: -2rem;
+        font-size: 1.6rem;
+        color: rgb(214, 145, 16);
+    }
+
+    &__address {
+        margin-top: 1rem;
+        font-size: 1.6rem;
+    }
+
+    &__price {
+        font-size: 3.2rem;
+        color: $color-primary;
+        display: block;
+    }
+
+    // image 
+    &-image-box {
+        display: flex;
+        gap: 1.6rem;
+        overflow-x: scroll;
+
+        img {
+            width: 45%;
+            height: 450%;
+        }
+    }
+
+    // overview
+    &-view {
+        margin-top: 4.8rem;
+        display: grid;
+        grid-template-columns: 4fr 2fr;
+        gap: 3rem;
+    }
+
+    &__icon-box {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        padding: 5rem;
+        border-radius: 1rem;
+        border: 1px solid $color-general-7;
+    }
+
+    &__description {
+        margin-top: 4.2rem;
+        font-size: 1.6rem;
+        padding: 2rem;
+        border-radius: 1rem;
+        border: 1px solid $color-general-7;
+
+        p {
+            line-height: 1.7;
+            letter-spacing: 0.05rem;
+        }
+    }
+
+    &__map {
+        margin-top: 4.2rem;
+    }
+
+    &__plan {
+        margin-top: 4.2rem;
+
+        p {
+            font-size: 1.6rem;
+            line-height: 1.7;
+            letter-spacing: 0.05rem;
+        }
+    }
+
+    &__agent {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $color-general-7;
+        border-radius: 1rem;
+        padding: 3rem;
+    }
+
+    &__ft {
+        font-size: 1.4rem;
+        color: $color-general-3;
+    }
+
+    &__profile-box {
+        border-top: 1px solid $color-general-6;
+        padding-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+    &__profile {
+        margin-top: 2rem;
+        padding: 2rem;
+        background-color: $color-general-9;
+        border-radius: 1rem;
+
+        &-img-box {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1.8rem;
+        }
+    }
+
+    &__call {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    &__number {
+        color: $color-primary;
+        font-size: 1.6rem;
+    }
+
+    &__btn-box {
+        margin-top: 1rem;
+        display: flex;
+        gap: 1rem;
+    }
+}

@@ -27,7 +27,7 @@
         overflow: hidden;
         border: none;
         background-color: $color-primary-light-2;
-        padding: 1.4rem 3.2rem;
+        padding: 1.4rem 3rem;
         color: $color-white;
         border-radius: 1rem;
         transition: transform 0.25s ease, box-shadow 0.3s ease;
@@ -59,7 +59,14 @@
         }
     }
 
+    &--logout {
+        background-color: #fa5252;
+    }
+
     &--outline {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: relative;
         overflow: hidden;
         border: 2px solid $color-primary-light-2;
@@ -97,13 +104,12 @@
     }
 
     &--shop {
-        transform: translateY(-4rem);
-        margin-bottom: -4rem;
+        margin-top: 2rem;
         padding: 0.8rem 8rem;
         transition: all 0.3s ease;
 
         &:hover {
-            transform: translateY(-4.4rem);
+            transform: translateY(-0.4rem);
             box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.12);
         }
 

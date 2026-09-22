@@ -30,10 +30,12 @@
 
 @import "shop/shop";
 
-@import "blog-details/blog-details";
+@import"blog-details/blog-details";
 
 @import "blog-page/blog-page";
 
-@import "checkout-page/checkout";
+@import"checkout-page/checkout.scss";
 
-@import "cart-page/cart";
+@import"cart-page/cart.scss";
+
+@import"propert-details/propert-details";

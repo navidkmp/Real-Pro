@@ -1,3 +1,4 @@
+// AGENTS
 .agents {
     padding: 8rem 0 2rem 0;
 
@@ -6,11 +7,73 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 3.5rem;
         margin-bottom: 6rem;
+
+        img {
+            width: 90%;
+        }
     }
 
     &__btn {
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+}
+
+// RESPONSIVE
+// TABLET
+@media (max-width: 56.25em) {
+    .agents {
+        padding: 6rem 2rem 0 2rem;
+
+        &__new__img-box {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 3rem;
+            margin-bottom: 5rem;
+
+            img {
+                width: 90%;
+                justify-self: center;
+            }
+        }
+    }
+}
+
+// MOBILE
+@media (max-width: 37.5em) {
+    .agents {
+        padding: 5rem 1.6rem 0 1.6rem;
+
+        &__new__img-box {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+
+            img {
+                width: 85%;
+                max-width: 35rem;
+                justify-self: center;
+            }
+        }
+
+        &__btn {
+            width: 100%;
+        }
+    }
+}
+
+// SMALL MOBILE
+@media (max-width: 25em) {
+    .agents {
+        padding: 4rem 1.2rem 0 1.2rem;
+
+        &__new__img-box {
+            // gap: 2.5rem;
+            margin-bottom: 3.5rem;
+
+            img {
+                width: 90%;
+            }
+        }
     }
 }

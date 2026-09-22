@@ -20,6 +20,12 @@
         align-items: center;
     }
 
+    &__img {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
 
     &__text-box {
         display: flex;
@@ -39,5 +45,125 @@
     &__title {
         font-size: 2.2rem;
         font-weight: bold;
+    }
+}
+
+// ─────────────────────────────────────
+// Tablet
+// ─────────────────────────────────────
+
+@media (max-width: 56.25em) {
+    .details-section {
+        padding: 0 2rem;
+    }
+
+    .details {
+        &__top {
+            padding: 3.5rem 0;
+
+            span {
+                font-size: 1.5rem;
+            }
+        }
+
+        &__img {
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        &__text-box {
+            width: 85%;
+            gap: 2.5rem;
+        }
+
+        &__text {
+            font-size: 1.5rem;
+            line-height: 1.8;
+        }
+
+        &__title {
+            font-size: 2rem;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────
+// Mobile
+// ─────────────────────────────────────
+
+@media (max-width: 37.5em) {
+    .details-section {
+        padding: 0 1.6rem;
+    }
+
+    .details {
+        &__top {
+            padding: 3rem 0;
+            text-align: center;
+
+            span {
+                font-size: 1.4rem;
+            }
+        }
+
+        &__img {
+            width: 100%;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        &__text-box {
+            width: 100%;
+            gap: 2rem;
+        }
+
+        &__text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+        }
+
+        &__title {
+            font-size: 1.9rem;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────
+// Small Mobile
+// ─────────────────────────────────────
+
+@media (max-width: 25em) {
+    .details {
+        &__top {
+            padding: 2.5rem 0;
+
+            span {
+                font-size: 1.3rem;
+            }
+        }
+
+        &__text-box {
+            gap: 1.6rem;
+        }
+
+        &__text {
+            font-size: 1.3rem;
+        }
+
+        &__title {
+            font-size: 1.8rem;
+        }
     }
 }

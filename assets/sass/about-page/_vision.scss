@@ -104,3 +104,113 @@
         text-align: center;
     }
 }
+
+// ─────────────────────────────────────
+// Tablet
+// ─────────────────────────────────────
+
+@media (max-width: 56.25em) {
+    .vision {
+        padding: 7rem 3rem 6rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 5rem 2.5rem;
+
+        &__header {
+            grid-column: 1 / -1;
+            padding-top: 2rem;
+        }
+
+        &__icon-box {
+            width: 35%;
+            padding: 2.5rem 0;
+        }
+
+        &__title {
+            font-size: 2rem;
+        }
+
+        &__description {
+            font-size: 1.5rem;
+            line-height: 1.7;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────
+// Mobile
+// ─────────────────────────────────────
+
+@media (max-width: 37.5em) {
+    .vision-section {
+        padding: 0 1.6rem;
+    }
+
+    .vision {
+        padding: 5rem 0;
+        grid-template-columns: 1fr;
+        gap: 5rem;
+
+        &__header {
+            grid-column: auto;
+            padding-top: 0;
+        }
+
+        &__item {
+            width: 100%;
+        }
+
+        &__icon-box {
+            width: 25%;
+            min-width: 8rem;
+            max-width: 10rem;
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+
+            &:hover {
+                transform: translateY(-0.5rem) scale(1.03);
+            }
+        }
+
+        &__text-box {
+            gap: 1.2rem;
+            max-width: 40rem;
+        }
+
+        &__title {
+            font-size: 2rem;
+            margin: 0;
+        }
+
+        &__description {
+            font-size: 1.5rem;
+            line-height: 1.7;
+        }
+    }
+}
+
+
+// ─────────────────────────────────────
+// Small Mobile
+// ─────────────────────────────────────
+
+@media (max-width: 25em) {
+    .vision {
+        padding: 4rem 0;
+        gap: 4rem;
+
+        &__icon-box {
+            width: 30%;
+            min-width: 7rem;
+            padding: 1.8rem 0;
+        }
+
+        &__title {
+            font-size: 1.8rem;
+        }
+
+        &__description {
+            font-size: 1.4rem;
+        }
+    }
+}

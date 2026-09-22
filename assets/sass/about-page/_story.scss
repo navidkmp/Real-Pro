@@ -1,27 +1,135 @@
+// .story-section {
+//     max-width: 130rem;
+//     margin: 0 auto;
+// }
+
+// .story {
+//     padding: 8.6rem 0;
+//     display: grid;
+//     grid-template-columns: 1fr 1fr;
+
+//     &__img-box {
+//         width: 100%;
+//     }
+
+//     &__text-box {
+//         padding: 5.6rem;
+//         display: flex;
+//         flex-direction: column;
+//         gap: 2.2rem;
+//     }
+
+//     &__title {
+//         font-size: 4rem;
+//         font-weight: bold;
+//     }
+
+//     &__text {
+//         color: $color-general-3;
+//         font-size: 1.6rem;
+//     }
+// }
+
 .story-section {
+    width: 100%;
     max-width: 130rem;
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .story {
-    padding: 8.6rem 0;
+    padding: clamp(5rem, 6vw, 8.6rem) 0;
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+
+    &__img-box {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
     &__text-box {
-        padding: 5.6rem;
+        padding: clamp(3rem, 4vw, 5.6rem);
+
         display: flex;
         flex-direction: column;
-        gap: 2.2rem;
+        gap: clamp(1.6rem, 2vw, 2.2rem);
     }
 
     &__title {
-        font-size: 4rem;
-        font-weight: bold;
+        margin: 0;
+
+        font-size: clamp(2.8rem, 2.5vw + 0.5rem, 4rem);
+        font-weight: 700;
+        line-height: 1.15;
     }
 
     &__text {
+        margin: 0;
+
         color: $color-general-3;
-        font-size: 1.6rem;
+        font-size: clamp(1.5rem, 0.5vw + 0.8rem, 1.6rem);
+        line-height: 1.7;
+    }
+}
+
+
+// ─────────────────────────────
+// Tablet
+// ─────────────────────────────
+
+@media (max-width: 56.25em) {
+    .story {
+        grid-template-columns: 1fr;
+
+        &__img-box {
+            max-height: 45rem;
+        }
+
+        &__text-box {
+            padding: 4rem 3rem;
+        }
+    }
+}
+
+
+// ─────────────────────────────
+// Mobile
+// ─────────────────────────────
+
+@media (max-width: 37.5em) {
+    .story-section {
+        padding: 0 1.6rem;
+    }
+
+    .story {
+        padding: 5rem 0;
+
+        &__img-box {
+            max-height: 30rem;
+        }
+
+        &__text-box {
+            padding: 3rem 0;
+            gap: 1.6rem;
+        }
+
+        &__title {
+            font-size: 2.8rem;
+        }
+
+        &__text {
+            font-size: 1.5rem;
+            line-height: 1.7;
+        }
     }
 }

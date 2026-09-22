@@ -4,7 +4,7 @@
 }
 
 .map {
-    padding: 12.8rem 0 5.6rem 0;
+    padding: 12.8rem 2rem 5.6rem 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 6rem;
@@ -39,6 +39,99 @@
         &:hover {
             transform: scale(1.15);
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+    }
+}
+
+// TABLET
+@media (max-width: 56.25em) {
+    .contactmap-section {
+        padding: 0 2rem;
+    }
+
+    .map {
+        padding: 8rem 0 5rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 4rem;
+
+        &__description {
+            font-size: 1.6rem;
+            line-height: 1.7;
+        }
+
+        &__list {
+            padding: 0;
+            font-size: 1.5rem;
+            gap: 2.5rem;
+        }
+
+        &__img {
+            height: 100%;
+            object-fit: cover;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+}
+
+// MOBILE
+@media (max-width: 37.5em) {
+    .contactmap-section {
+        padding: 0 1.6rem;
+    }
+
+    .map {
+        padding: 6rem 0 4rem;
+        grid-template-columns: 1fr;
+        gap: 4rem;
+
+        &__text-box {
+            align-items: center;
+            text-align: center;
+        }
+
+        &__description {
+            margin-top: 1.2rem;
+            font-size: 1.5rem;
+            line-height: 1.7;
+        }
+
+        &__list {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            font-size: 1.4rem;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        &__img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+}
+
+// SMALL MOBILE
+@media (max-width: 25em) {
+    .map {
+        padding: 5rem 0 3.5rem;
+        gap: 3rem;
+
+        &__description {
+            font-size: 1.4rem;
+        }
+
+        &__list {
+            font-size: 1.3rem;
+            gap: 1.8rem;
         }
     }
 }

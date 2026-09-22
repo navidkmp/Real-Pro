@@ -14,7 +14,7 @@
             <form method="POST" class="login__form">
                 {% csrf_token %}
                 {% if error %}
-                    <p class="error">{{ error }}</p>
+                    <h2 class="error" style="color: #e80d0d">{{ error }}</h2>
                 {% endif %}
                 <!-- Account -->
                 <div class="login__field login__field--error">
@@ -33,7 +33,7 @@
                 </div>
                 <!-- Options -->
                 <div class="login__options">
-                    <label class="login__remember"> <input class="login__checkbox" type="checkbox">
+                    <label class="login__remember"> <input class="login__checkbox" name="remember_me" type="checkbox">
                         <span class="login__remember-text">
                             Remember Me
                         </span> </label>

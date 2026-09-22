@@ -4,7 +4,7 @@
 }
 
 .area {
-    padding: 6rem 0;
+    padding: 6rem 2rem;
 
     &__top {
         padding: 4.2rem 0;
@@ -22,11 +22,14 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         margin-bottom: 2.5rem;
+        gap: 2.5rem;
+        width: 100%;
     }
 
     &__img-box-2 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
     }
 }
 
