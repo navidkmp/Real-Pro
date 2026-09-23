@@ -12,7 +12,7 @@
                     <a href="{% url 'about:about' %}" class="{% if request.resolver_match.url_name == 'about' %}navbar__active{% endif %}">About</a>
                 </li>
                 <li>
-                    <a href="#" class="{% if request.resolver_match.url_name == 'Blog' %}navbar__active{% endif %}">Blog</a>
+                    <a href="{% url 'blog:blog' %}" class="{% if request.resolver_match.url_name == 'Blog' %}navbar__active{% endif %}">Blog</a>
                 </li>
                 <li>
                     <a href="#" class="{% if request.resolver_match.url_name == 'Listing' %}navbar__active{% endif %}">Listing</a>

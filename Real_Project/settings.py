@@ -35,12 +35,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # myapps
+    # my_apps
     'home.apps.HomeConfig',
     'registration.apps.RegistrationConfig',
     'about.apps.AboutConfig',
     'contactus.apps.ContactusConfig',
     'property.apps.PropertyConfig',
+    'blog.apps.BlogConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,7 +130,6 @@ MAILERS = {
     },
 }
 
-SESSION_COOKIE_AGE = 60 * 60 * 24 * 30
 
 
 CSRF_TRUSTED_ORIGINS = [
