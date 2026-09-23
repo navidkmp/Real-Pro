@@ -118,3 +118,83 @@
         }
     }
 }
+
+/* ================================
+   BUTTONS RESPONSIVE
+================================ */
+
+@media (max-width: 60em) {
+
+    .btn {
+
+        &--full {
+            padding: 1.3rem 2.6rem;
+        }
+
+        &--shop {
+            padding: 0.8rem 5rem;
+        }
+
+        &--outline {
+            font-size: 1.4rem;
+            padding: 0.8rem 1.5rem;
+        }
+    }
+}
+
+
+@media (max-width: 48em) {
+
+    .btn {
+
+        &--transparent {
+            font-size: 1.6rem;
+        }
+
+        &--full {
+            font-size: 1.5rem;
+            padding: 1.2rem 2.2rem;
+        }
+
+        &--outline {
+            font-size: 1.3rem;
+            padding: 0.7rem 1.3rem;
+            border-width: 1.5px;
+        }
+
+        &--shop {
+            width: 100%;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+@media (max-width: 30em) {
+
+    .btn {
+
+        &--transparent {
+            font-size: 1.5rem;
+        }
+
+        &--full {
+            width: 100%;
+            font-size: 1.4rem;
+            padding: 1.1rem 1.8rem;
+        }
+
+        &--outline {
+            font-size: 1.2rem;
+            padding: 0.7rem 1.1rem;
+        }
+
+        &--shop {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding: 1rem 1.5rem;
+            font-size: 1.4rem;
+        }
+    }
+}

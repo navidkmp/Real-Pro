@@ -1,5 +1,6 @@
 @import "base/base";
 @import "base/btn";
+@import "base/pagination";
 @import "base/typography";
 
 @import "contactus-page/contact";
@@ -34,7 +35,7 @@
 
 @import "blog-page/blog-page";
 
-@import"checkout-page/checkout.scss";
+@import"checkout/checkout";
 
 @import"cart-page/cart.scss";
 

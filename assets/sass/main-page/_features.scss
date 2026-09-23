@@ -50,7 +50,8 @@
     }
 }
 
-// 1200px
+// RESPONSIVE
+// TABLET
 @media (max-width: 75em) {
     .features {
         &__container {
@@ -67,8 +68,7 @@
     }
 }
 
-
-// 900px
+// MOBILE
 @media (max-width: 56.25em) {
     .features {
         &__top {
@@ -92,7 +92,7 @@
 }
 
 
-// 600px
+// SMALL MOBILE
 @media (max-width: 37.5em) {
     .features-section {
         padding: 0 1.6rem;

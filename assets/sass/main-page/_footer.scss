@@ -6,13 +6,13 @@
 .footer {
     max-width: 130rem;
     margin: 0 auto;
-    padding: 8rem 0;
+    padding: 4rem 3rem;
 
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 2fr;
-    gap: 2rem;
+    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr;
 
     &__info {
+        width: 80%;
         margin-top: 2.8rem;
         display: flex;
         flex-direction: column;
@@ -44,60 +44,25 @@
         text-decoration: none;
         color: $color-general-3;
         font-size: 1.8rem;
-        transition: all 0.2s;
+        transition: all 0.4s;
 
         &:hover {
             color: $color-general-1;
-        }
-    }
-
-    &__form {
-        font-size: 1.6rem;
-        line-height: 1.4;
-
-        p {
-            color: $color-general-3;
-        }
-
-        form {
-            display: grid;
-            grid-template-columns: 1fr 10rem;
-        }
-
-        &-input {
-            padding: 1.2rem 3.6rem;
-            border-radius: 1rem;
-            border: 2px solid #E0E0E0;
-            outline: none;
-        }
-
-        &-btn {
-            transform: translateX(-6.2rem);
-            padding: 1.2rem 2rem;
-            border-radius: 1rem;
-            border: 2px solid $color-primary;
-            background-color: $color-primary;
-            color: $color-white;
-            cursor: pointer;
+            text-decoration: underline;
         }
     }
 }
 
-// 1200px
+// RESPONSIVE
+// TABLET
 @media (max-width: 75em) {
     .footer {
         grid-template-columns: 2fr 1fr 1fr 2fr;
         gap: 4rem 2.5rem;
     }
-
-    .footer__form {
-        grid-column: 1 / -1;
-        max-width: 50rem;
-    }
 }
 
-
-// 900px
+// MOBILE
 @media (max-width: 56.25em) {
     .footer {
         grid-template-columns: repeat(2, 1fr);
@@ -108,15 +73,9 @@
     .footer__info {
         margin-top: 0;
     }
-
-    .footer__form {
-        grid-column: 1 / -1;
-        max-width: 100%;
-    }
 }
 
-
-// 600px
+// SMALL MOBILE
 @media (max-width: 37.5em) {
     .footer-section {
         margin-top: 5rem;
@@ -146,12 +105,7 @@
     }
 
     .footer__form {
-        // grid-column: auto;
         width: 100%;
-    }
-
-    .footer__form-input {
-        width: 70%;
     }
 
     .footer__form-btn {

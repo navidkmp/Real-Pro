@@ -64,11 +64,10 @@
     <section class="blog-section">
         <div class="new-blog">
             <div class="blogs">
-
-                    {% for post in blog_posts %}
-                         <div class="blog">
+                {% for post in blog_posts %}
+                    <div class="blog">
                         <div>
-                            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="blog__img">
+                            <a href=""> <img src="{{ post.image.url }}" alt="{{ post.title }}" class="blog__img"> </a>
                         </div>
                         <div class="blog__text-box">
                             <div>
@@ -91,47 +90,43 @@
                             <div class="blog__text">
                                 <p>
                                     {{ post.content }}
-                                    </p>
+                                </p>
                             </div>
                         </div>
-                        </div>
-                    {% endfor %}
+                    </div>
+                {% endfor %}
             </div>
-            <div class="blog__pagination">
-                <ul class="blog__pagination__list">
-                    <li>
-                        <a href="#">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.0596 13.28L5.7129 8.9333C5.19957 8.41997 5.19957 7.57997 5.7129 7.06664L10.0596 2.71997" stroke="#636366" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="active">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5.94043 13.28L10.2871 8.9333C10.8004 8.41997 10.8004 7.57997 10.2871 7.06664L5.94043 2.71997" stroke="#636366" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </a>
-                    </li>
+            <div class="pagination">
+                <ul class="pagination__list">
+                    {% if blog_posts.has_previous %}
+                        <li>
+                            <a href="?page={{ blog_posts.previous_page_number }}">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.0596 13.28L5.7129 8.9333C5.19957 8.41997 5.19957 7.57997 5.7129 7.06664L10.0596 2.71997" stroke="#636366" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% for num in blog_posts.paginator.page_range %}
+                        <li>
+                            <a href="?page={{ num }}" class="{% if blog_posts.number == num %}pagination__active{% endif %}">
+                                {{ num }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    {% if blog_posts.has_next %}
+                        <li>
+                            <a href="?page={{ blog_posts.next_page_number }}">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.94043 13.28L10.2871 8.9333C10.8004 8.41997 10.8004 7.57997 10.2871 7.06664L5.94043 2.71997" stroke="#636366" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
+        </div>
     </section>
-    <!-- end more blog -->
 {% endblock %}
 
 

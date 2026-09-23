@@ -16,8 +16,6 @@
     border-radius: 1.2rem;
     overflow: hidden;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-
-    // حالت اولیه
     opacity: 0;
     transform: translateY(8rem);
 
@@ -25,13 +23,11 @@
         opacity 0.8s ease,
         transform 0.8s ease;
 
-    // وقتی به سکشن رسیدیم
     &.is-visible {
         opacity: 1;
         transform: translateY(0);
     }
 
-    // تأخیر کارت‌ها
     &:nth-child(1) {
         transition-delay: 0.1s;
     }
@@ -105,10 +101,8 @@
     }
 }
 
-// ─────────────────────────────────────
-// Tablet
-// ─────────────────────────────────────
-
+// RESPONSIVE
+// TABLET
 @media (max-width: 56.25em) {
     .blog-section {
         padding: 0 2rem;
@@ -155,11 +149,7 @@
     }
 }
 
-
-// ─────────────────────────────────────
-// Mobile
-// ─────────────────────────────────────
-
+// MOBILE
 @media (max-width: 37.5em) {
     .blog-section {
         padding: 0 1.6rem;
@@ -216,11 +206,7 @@
     }
 }
 
-
-// ─────────────────────────────────────
-// Small Mobile
-// ─────────────────────────────────────
-
+// SMALL MOBILE
 @media (max-width: 25em) {
     .blogs {
         gap: 2.5rem;

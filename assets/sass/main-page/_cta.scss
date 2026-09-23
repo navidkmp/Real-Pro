@@ -5,99 +5,54 @@
 
 .cta {
     margin-top: 8rem;
-
     background-color: #E0E0E0;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-
     align-items: center;
     justify-content: center;
-
     gap: 4rem;
-
     border-radius: 1rem;
     overflow: hidden;
 
-
-    // =========================================
-    // TEXT BOX
-    // =========================================
-
     &__text-box {
         padding: 0 8rem;
-
         opacity: 0;
         transform: translateX(-5rem);
     }
 
 
-    // =========================================
-    // SMALL TITLE
-    // =========================================
-
     &__text {
         display: inline-block;
-
         font-size: 1.6rem;
-
         opacity: 0;
         transform: translateY(2.5rem);
     }
-
-
-    // =========================================
-    // HEADING
-    // =========================================
 
     .heading-3 {
         opacity: 0;
         transform: translateY(2.5rem);
     }
 
-
-    // =========================================
-    // DESCRIPTION
-    // =========================================
-
     &__description {
         font-size: 1.6rem;
-
         opacity: 0;
         transform: translateY(2.5rem);
     }
 
-
-    // =========================================
-    // FEATURES
-    // =========================================
-
     &__features {
         margin-top: 2.8rem;
-
         display: grid;
         grid-template-columns: 1fr 1fr;
-
         gap: 3rem;
     }
-
-
-    // =========================================
-    // FEATURE CARD
-    // =========================================
 
     &__feature {
         display: flex;
         align-items: center;
-
         gap: 1.5rem;
-
         padding: 2rem;
-
         border-radius: 1rem;
-
         background-color: $color-white;
-
         opacity: 0;
         transform: translateY(3rem) scale(.95);
 
@@ -105,34 +60,22 @@
             transform .3s ease,
             box-shadow .3s ease;
 
-
         &:hover {
             transform: translateY(-.6rem) scale(1.01);
-
             box-shadow:
                 0 1.5rem 3rem rgba(0, 0, 0, .08);
         }
     }
 
-
-    // =========================================
-    // FEATURE ICON
-    // =========================================
-
     &__feature_icon {
         width: 4.5rem;
         height: 4.5rem;
-
         flex-shrink: 0;
-
         display: flex;
         align-items: center;
         justify-content: center;
-
         border-radius: 50%;
-
         background-color: rgba(37, 75, 134, .08);
-
         transition:
             transform .3s ease,
             background-color .3s ease;
@@ -141,50 +84,29 @@
 
     &__feature:hover &__feature_icon {
         transform: rotate(8deg) scale(1.1);
-
         background-color:
             rgba(37, 75, 134, .15);
     }
 
-
-    // =========================================
-    // FEATURE TEXT
-    // =========================================
-
     &__feature-text {
         display: flex;
         flex-direction: column;
-
         gap: .3rem;
-
         font-size: 1.6rem;
-
 
         span:first-child {
             font-weight: 700;
         }
     }
 
-
-    // =========================================
-    // IMAGE BOX
-    // =========================================
-
     &__image-box {
         height: 100%;
-
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
-
         opacity: 0;
         transform: translateX(9rem) scale(.85);
     }
-
-
-    // =========================================
-    // IMAGE
-    // =========================================
 
     &__img {
         width: 70%;
@@ -196,26 +118,11 @@
         transform-origin: bottom center;
     }
 
-
-    // =========================================
-    // WHEN CTA ENTERS VIEWPORT
-    // =========================================
-
     &.is-visible {
-
-        // -----------------------------
-        // Text box
-        // -----------------------------
-
         .cta__text-box {
             animation:
                 ctaTextIn .9s cubic-bezier(.16, 1, .3, 1) forwards;
         }
-
-
-        // -----------------------------
-        // Small title
-        // -----------------------------
 
         .cta__text {
             animation:
@@ -223,29 +130,15 @@
         }
 
 
-        // -----------------------------
-        // Heading
-        // -----------------------------
-
         .heading-3 {
             animation:
                 ctaFadeUp .8s cubic-bezier(.16, 1, .3, 1) .3s forwards;
         }
 
-
-        // -----------------------------
-        // Description
-        // -----------------------------
-
         .cta__description {
             animation:
                 ctaFadeUp .8s ease-out .45s forwards;
         }
-
-
-        // -----------------------------
-        // Feature cards
-        // -----------------------------
 
         .cta__feature {
             animation:
@@ -269,20 +162,10 @@
             }
         }
 
-
-        // -----------------------------
-        // Image
-        // -----------------------------
-
         .cta__image-box {
             animation:
                 ctaImageIn 1s cubic-bezier(.16, 1, .3, 1) .2s forwards;
         }
-
-
-        // -----------------------------
-        // Floating image
-        // -----------------------------
 
         .cta__img {
             animation:
@@ -290,17 +173,6 @@
         }
     }
 }
-
-
-
-// =====================================================
-// ANIMATIONS
-// =====================================================
-
-
-// =====================================================
-// TEXT BOX
-// =====================================================
 
 @keyframes ctaTextIn {
 
@@ -315,12 +187,6 @@
     }
 }
 
-
-
-// =====================================================
-// TEXT FADE UP
-// =====================================================
-
 @keyframes ctaFadeUp {
 
     from {
@@ -333,12 +199,6 @@
         transform: translateY(0);
     }
 }
-
-
-
-// =====================================================
-// FEATURE CARDS
-// =====================================================
 
 @keyframes ctaFeatureIn {
 
@@ -354,12 +214,6 @@
             translateY(0) scale(1);
     }
 }
-
-
-
-// =====================================================
-// IMAGE ENTER
-// =====================================================
 
 @keyframes ctaImageIn {
 
@@ -455,31 +309,23 @@
 }
 
 @media (max-width: 37.5em) {
-
     .cta-section {
         padding: 0 1.6rem;
     }
 
-
     .cta {
-
         margin-top: 5rem;
-
         padding-top: 3.5rem;
-
         gap: 3rem;
-
 
         &__text-box {
             padding: 0 2rem;
         }
 
-
         &__text,
         &__description {
             font-size: 1.5rem;
         }
-
 
         &__features {
 
@@ -490,16 +336,13 @@
             margin-top: 2rem;
         }
 
-
         &__feature {
             padding: 1.5rem;
         }
 
-
         &__feature-text {
             font-size: 1.4rem;
         }
-
 
         &__img {
             width: 80%;
@@ -508,7 +351,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     .cta {
 
         &__text-box,
@@ -517,14 +359,10 @@
         &__description,
         &__feature,
         &__image-box {
-
             opacity: 1;
-
             transform: none;
-
             animation: none !important;
         }
-
 
         &__img {
             animation: none !important;

@@ -1,5 +1,5 @@
 .navbar-section {
-    max-width: 130rem;
+    width: 100%;
     margin: 0 auto;
     padding: 0 2.4rem;
 }
@@ -20,6 +20,8 @@
 
     background-color: $color-white;
 
+    box-sizing: border-box;
+
     &__logo {
         width: 100%;
         max-width: 14rem;
@@ -27,11 +29,13 @@
     }
 
     &__list {
+
         ul {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 2.8rem;
+
             list-style: none;
             margin: 0;
             padding: 0;
@@ -76,22 +80,23 @@
         color: $color-primary !important;
     }
 
-    // Hamburger
     &__menu {
         display: none;
         border: none;
         background: none;
         cursor: pointer;
+
         font-size: 2.8rem;
         color: $color-general-1;
     }
 }
 
 // RESPONSIVE
-// 900px
+// TABLET
 @media (max-width: 75em) {
 
     .navbar {
+
         &__list {
             display: none;
         }
@@ -102,10 +107,8 @@
     }
 }
 
-
-// 600px
+// SMALL MOBILE
 @media (max-width: 37.5em) {
-
     .navbar-section {
         padding: 0 1.6rem;
     }
@@ -114,7 +117,7 @@
         padding: 1.6rem 0.8rem;
 
         &__logo {
-            max-width: 11rem;
+            max-width: 13rem;
         }
 
         &__btns {

@@ -4,6 +4,8 @@
 }
 
 .shop {
+    padding: 6rem 2rem;
+
     &__title {
         padding: 0 2rem;
     }
@@ -127,5 +129,209 @@
         color: $color-general-3;
         padding: 1.2rem;
         border-radius: 1rem;
+    }
+}
+
+// RESPONSIVE
+// TABLET
+@media (max-width: 75em) {
+
+    .shop {
+        padding: 5rem 2rem;
+
+        &__container {
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        &__item {
+            margin-top: 4rem;
+
+            &__img {
+                width: 90%;
+            }
+        }
+    }
+
+    .shop__cart {
+
+        &__category,
+        &__size,
+        &__tags {
+            padding: 2.2rem;
+        }
+    }
+}
+
+// SMALL TABLET
+@media (max-width: 60em) {
+    .shop {
+        padding: 4.5rem 2rem;
+
+        &__title {
+            padding: 0 1rem;
+        }
+
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem 2rem;
+        }
+
+        &__item {
+            margin-top: 3rem;
+        }
+    }
+
+    .shop__cart {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        &__title {
+            grid-column: 1 / -1;
+        }
+
+        &__category,
+        &__size,
+        &__tags {
+            margin: 0;
+            padding: 2.5rem;
+        }
+
+        &__tags {
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+// MOBILE
+@media (max-width: 48em) {
+    .shop {
+        padding: 4rem 2rem;
+
+        &__title {
+            padding: 0;
+        }
+
+        &__container {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem 1.5rem;
+        }
+
+        &__item {
+            margin-top: 2rem;
+
+            &__img {
+                width: 100%;
+            }
+
+            &__title {
+                font-size: 1.6rem;
+                margin: 1.2rem 0;
+                text-align: center;
+            }
+
+            &__price {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .shop__cart {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &__title {
+            font-size: 2rem;
+        }
+
+        &__category,
+        &__size,
+        &__tags {
+            padding: 2rem;
+        }
+
+        &__tags {
+            margin: 0;
+        }
+
+        &__category__list,
+        &__size__list {
+            font-size: 1.5rem;
+        }
+
+        &__tag {
+            font-size: 1.3rem;
+            padding: 1rem;
+        }
+    }
+}
+
+// SMALL MOBILE
+@media (max-width: 30em) {
+    .shop {
+        padding: 3.5rem 1.2rem;
+
+        &__list {
+            grid-template-columns: 1fr;
+            gap: 3.5rem;
+        }
+
+        &__item {
+            margin-top: 1rem;
+
+            &__img {
+                width: 80%;
+            }
+
+            &__title {
+                font-size: 1.7rem;
+            }
+
+            &__price {
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .shop__cart {
+
+        &__category,
+        &__size,
+        &__tags {
+            padding: 1.8rem;
+        }
+
+        &__title {
+            font-size: 1.9rem;
+        }
+
+        &__category__list,
+        &__size__list {
+            font-size: 1.4rem;
+            gap: 1rem;
+        }
+
+        &__tag {
+            font-size: 1.2rem;
+            padding: 0.9rem;
+        }
     }
 }
