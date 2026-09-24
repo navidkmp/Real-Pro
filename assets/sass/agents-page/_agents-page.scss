@@ -1,6 +1,7 @@
 // AGENTS
 .agents {
-    padding: 8rem 0 2rem 0;
+    padding: 8rem 2rem 2rem 2rem;
+    text-align: center;
 
     &__new__img-box {
         display: grid;
@@ -24,7 +25,7 @@
 // TABLET
 @media (max-width: 56.25em) {
     .agents {
-        padding: 6rem 2rem 0 2rem;
+        padding: 6rem 2rem 1.6rem 2rem;
 
         &__new__img-box {
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -42,7 +43,7 @@
 // MOBILE
 @media (max-width: 37.5em) {
     .agents {
-        padding: 5rem 1.6rem 0 1.6rem;
+        padding: 5rem 1.6rem 1.2rem 1.6rem;
 
         &__new__img-box {
             grid-template-columns: 1fr;

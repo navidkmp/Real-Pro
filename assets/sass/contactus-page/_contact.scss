@@ -20,7 +20,6 @@
     &__login-box {
         display: flex;
         flex-direction: column;
-        // justify-content: center;
         gap: 1.8rem;
         padding: 3rem;
         border: 2px solid $color-general-6;
@@ -114,7 +113,6 @@
         }
 
         &__login-box {
-            width: 100%;
             padding: 2.5rem 2rem;
             gap: 1.6rem;
         }

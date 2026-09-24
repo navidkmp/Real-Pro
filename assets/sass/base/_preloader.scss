@@ -1,0 +1,256 @@
+.preloader {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        animation: preloaderContentIn 0.8s ease forwards;
+    }
+
+    &__logo-box {
+        position: relative;
+        width: 15rem;
+        height: 15rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2.5rem;
+    }
+
+    &__circle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+        transform: rotate(-90deg);
+    }
+
+    &__circle-bg {
+        fill: none;
+        stroke: rgba(0, 0, 0, 0.1);
+        stroke-width: 3;
+    }
+
+    &__circle-progress {
+        fill: none;
+        stroke: $color-primary;
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-dasharray: 339.292;
+        stroke-dashoffset: 339.292;
+        transition: stroke-dashoffset 0.1s linear;
+    }
+
+    &__logo {
+        position: relative;
+        z-index: 2;
+        width: 8rem;
+        height: auto;
+        max-width: 70%;
+        object-fit: contain;
+        user-select: none;
+        animation: logoPulse 2s ease-in-out infinite;
+    }
+
+    &__percentage {
+        min-width: 7rem;
+        margin-bottom: 0.8rem;
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1;
+        color: #222222;
+        letter-spacing: 0.1rem;
+        text-align: center;
+    }
+
+    &__text {
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #777777;
+        letter-spacing: 0.08rem;
+        text-align: center;
+        opacity: 0;
+        animation:
+            textFadeIn 0.8s ease 0.4s forwards;
+    }
+
+    &--hide {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+        transition:
+            opacity 0.8s ease,
+            visibility 0.8s ease;
+
+        .preloader__content {
+            animation: preloaderContentOut 0.7s ease forwards;
+        }
+    }
+}
+
+@keyframes preloaderContentIn {
+    0% {
+        opacity: 0;
+        transform:
+            translateY(2rem) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform:
+            translateY(0) scale(1);
+    }
+}
+
+@keyframes logoPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes textFadeIn {
+    0% {
+        opacity: 0;
+
+        transform: translateY(1rem);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes preloaderContentOut {
+    0% {
+        opacity: 1;
+
+        transform:
+            scale(1) translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+
+        transform:
+            scale(1.08) translateY(-1rem);
+    }
+}
+
+@media only screen and (max-width: 56.25em) {
+    .preloader {
+        &__logo-box {
+            width: 14rem;
+            height: 14rem;
+        }
+
+        &__logo {
+            width: 7.5rem;
+        }
+
+        &__percentage {
+            font-size: 2rem;
+        }
+
+        &__text {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 37.5em) {
+    .preloader {
+        &__logo-box {
+            width: 12rem;
+            height: 12rem;
+
+            margin-bottom: 2rem;
+        }
+
+        &__logo {
+            width: 6.5rem;
+        }
+
+        &__percentage {
+            font-size: 1.8rem;
+
+            min-width: 6rem;
+        }
+
+        &__text {
+            font-size: 1.15rem;
+
+            letter-spacing: 0.05rem;
+        }
+
+        &__circle-bg,
+        &__circle-progress {
+            stroke-width: 2.5;
+        }
+    }
+}
+
+@media only screen and (max-width: 25em) {
+    .preloader {
+        &__logo-box {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        &__logo {
+            width: 5.5rem;
+        }
+
+        &__percentage {
+            font-size: 1.6rem;
+        }
+
+        &__text {
+            font-size: 1rem;
+        }
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .preloader,
+    .preloader__content,
+    .preloader__logo,
+    .preloader__text,
+    .preloader__circle-progress {
+        animation: none !important;
+
+        transition: none !important;
+    }
+}

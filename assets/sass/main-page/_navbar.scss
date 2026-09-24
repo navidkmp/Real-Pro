@@ -5,6 +5,7 @@
 }
 
 .navbar {
+    box-shadow: 10px 8px 10px rgb(191 219 254);
     position: fixed;
     top: 0;
     left: 0;
@@ -117,7 +118,7 @@
         padding: 1.6rem 0.8rem;
 
         &__logo {
-            max-width: 13rem;
+            max-width: 10rem;
         }
 
         &__btns {

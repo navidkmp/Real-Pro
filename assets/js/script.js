@@ -2,8 +2,10 @@
 const cta = document.querySelector(".cta");
 
 if (cta) {
+
     const ctaObserver = new IntersectionObserver(
         (entries, observer) => {
+
             entries.forEach((entry) => {
 
                 if (entry.isIntersecting) {
@@ -12,14 +14,18 @@ if (cta) {
 
                     observer.unobserve(entry.target);
                 }
+
             });
+
         },
         {
             threshold: 0.25
         }
     );
+
     ctaObserver.observe(cta);
 }
+
 
 // VISION SECTION LOAD
 const visionSection = document.querySelector(".vision-section");
@@ -63,90 +69,190 @@ if (visionSection) {
     visionObserver.observe(visionSection);
 }
 
+
 // BLOG SECTION LOAD
 document.addEventListener("DOMContentLoaded", () => {
-    const blogCards = document.querySelectorAll(".blog-section .blog");
-    if (!blogCards.length) return;
+
+    const blogCards =
+        document.querySelectorAll(".blog-section .blog");
+
+    if (!blogCards.length) {
+        return;
+    }
+
 
     const blogObserver = new IntersectionObserver(
         (entries) => {
+
             entries.forEach((entry) => {
+
                 if (entry.isIntersecting) {
+
                     entry.target.classList.add("is-visible");
+
                     blogObserver.unobserve(entry.target);
                 }
+
             });
+
         },
-        { threshold: 0.2 }
+        {
+            threshold: 0.2
+        }
     );
 
-    blogCards.forEach((card) => blogObserver.observe(card));
-});
 
-// NAVBAR TOGGLE
-document.addEventListener("DOMContentLoaded", () => {
-
-    const navbar = document.querySelector(".navbar");
-    const menuBtn = document.querySelector(".navbar__menu");
-    const navList = document.querySelector(".navbar__list");
-
-    if (!menuBtn || !navList) return;
-
-    menuBtn.addEventListener("click", () => {
-        const isOpen = navList.classList.toggle("is-open");
-        menuBtn.classList.toggle("is-active", isOpen);
-        menuBtn.setAttribute("aria-expanded", isOpen);
-    });
-
-    // close menu by clicking to link
-    navList.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-            navList.classList.remove("is-open");
-            menuBtn.classList.remove("is-active");
-            menuBtn.setAttribute("aria-expanded", "false");
-        });
-    });
-
-    // close menu by clicking outside
-    document.addEventListener("click", (e) => {
-        if (!navbar.contains(e.target)) {
-            navList.classList.remove("is-open");
-            menuBtn.classList.remove("is-active");
-            menuBtn.setAttribute("aria-expanded", "false");
-        }
+    blogCards.forEach((card) => {
+        blogObserver.observe(card);
     });
 
 });
+
 
 // SHOPPING CART
-const products = document.querySelectorAll('.product');
+const products =
+    document.querySelectorAll(".product");
 
 
-products.forEach(function (product) {
-    const btnPlus = product.querySelector('.btn--plus');
-    const btnMin = product.querySelector('.btn--min');
-    const btnDel = product.querySelector('.btn--delete');
-    const countElement = product.querySelector('.count');
+products.forEach((product) => {
+
+    const btnPlus =
+        product.querySelector(".btn--plus");
+
+    const btnMin =
+        product.querySelector(".btn--min");
+
+    const btnDel =
+        product.querySelector(".btn--delete");
+
+    const countElement =
+        product.querySelector(".count");
+
+
+    // اگر اجزای محصول وجود نداشتند،
+    // اجرای این محصول را متوقف کن
+    if (
+        !btnPlus ||
+        !btnMin ||
+        !btnDel ||
+        !countElement
+    ) {
+        return;
+    }
+
 
     let count = 1;
 
-    // add
-    btnPlus.addEventListener('click', function () {
-        count++
-        countElement.textContent = count;
-    })
 
-    // min
-    btnMin.addEventListener('click', function () {
-        count--
+    // ADD
+    btnPlus.addEventListener("click", () => {
+
+        count++;
+
         countElement.textContent = count;
-        if (count === 0) {
+
+    });
+
+
+    // MIN
+    btnMin.addEventListener("click", () => {
+
+        count--;
+
+        if (count <= 0) {
+
             product.remove();
-        }
-    })
 
-    // delete
-    btnDel.addEventListener('click', function () {
+            return;
+        }
+
+        countElement.textContent = count;
+
+    });
+
+
+    // DELETE
+    btnDel.addEventListener("click", () => {
+
         product.remove();
-    })
-})
+
+    });
+
+});
+
+
+// PROPERTY DETAILS SLIDER
+const slider =
+    document.querySelector(".property-details-image-box");
+
+
+if (slider) {
+
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+
+    // MOUSE DOWN
+    slider.addEventListener("mousedown", (e) => {
+
+        isDown = true;
+
+        startX =
+            e.pageX - slider.offsetLeft;
+
+        scrollLeft =
+            slider.scrollLeft;
+
+        slider.style.cursor =
+            "grabbing";
+
+    });
+
+
+    // MOUSE LEAVE
+    slider.addEventListener("mouseleave", () => {
+
+        isDown = false;
+
+        slider.style.cursor =
+            "grab";
+
+    });
+
+
+    // MOUSE UP
+    slider.addEventListener("mouseup", () => {
+
+        isDown = false;
+
+        slider.style.cursor =
+            "grab";
+
+    });
+
+
+    // MOUSE MOVE
+    slider.addEventListener("mousemove", (e) => {
+
+        if (!isDown) {
+            return;
+        }
+
+        e.preventDefault();
+
+
+        const x =
+            e.pageX - slider.offsetLeft;
+
+
+        const walk =
+            (x - startX) * 2;
+
+
+        slider.scrollLeft =
+            scrollLeft - walk;
+
+    });
+
+}

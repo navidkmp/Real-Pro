@@ -1,6 +1,24 @@
 {% extends 'base.html' %}{% load static %}
 
 {% block content %}
+       <!-- PRELOADER -->
+    <div class="preloader" id="preloader">
+        <div class="preloader__content">
+            <div class="preloader__logo-box">
+                <svg class="preloader__circle" viewBox="0 0 120 120">
+                    <circle class="preloader__circle-bg" cx="60" cy="60" r="54" />
+
+                    <circle class="preloader__circle-progress" cx="60" cy="60" r="54" />
+                </svg>
+
+                <img src="assets/img/logo.png" alt="RealPro" class="preloader__logo">
+            </div>
+
+            <div class="preloader__percentage">
+                <span id="loaderPercentage">0</span>%
+            </div>
+        </div>
+    </div>
     <!-- start hero  -->
     <section class="hero-section">
         <div class="hero">

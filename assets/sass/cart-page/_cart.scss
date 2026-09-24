@@ -29,8 +29,8 @@
         }
 
         input {
-            flex: 1;
-            min-width: 0;
+            // flex: 1;
+            // min-width: 0;
             padding: 1.2rem 1.4rem;
             border: 1px solid $color-primary-light-6;
             border-radius: .8rem;
@@ -74,7 +74,6 @@
     align-items: center;
     justify-content: space-between;
     padding-bottom: 3rem;
-    // border-bottom: 1px solid $color-primary-light-6;
 
     &__img {
         width: 15%;
@@ -136,13 +135,13 @@
 
         &__order {
             max-width: 60rem;
-            width: 100%;
+            width: 80%;
             margin: 0 auto;
         }
 
         &__coupon {
             input {
-                width: 45%;
+                width: 80%;
             }
         }
     }
@@ -173,7 +172,7 @@
             gap: 1.5rem;
 
             input {
-                width: 100%;
+                width: 90%;
             }
         }
 

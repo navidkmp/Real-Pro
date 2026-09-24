@@ -1,3 +1,279 @@
+// .hero-section {
+//     max-width: 130rem;
+//     margin: 0 auto;
+// }
+
+// .hero {
+//     padding: 5.6rem 2rem;
+
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     align-items: center;
+
+//     &__text-box {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: start;
+//         gap: 2.8rem;
+//     }
+
+//     &__subtitle {
+//         font-size: 2.2rem;
+
+//         opacity: 0;
+
+//         animation: heroFadeUp 0.7s ease-out 0.1s forwards;
+//     }
+
+//     &__title-wrapper {
+//         overflow: hidden;
+//     }
+
+//     &__title {
+//         opacity: 0;
+
+//         animation: heroTitleReveal 0.9s cubic-bezier(.16, 1, .3, 1) 0.25s forwards;
+//     }
+
+//     &__btn {
+//         opacity: 0;
+
+//         animation: heroFadeUp 0.7s ease-out 0.5s forwards;
+
+//         transition:
+//             transform 0.3s ease,
+//             box-shadow 0.3s ease;
+//     }
+
+//     &__btn:hover {
+//         transform: translateY(-0.4rem);
+
+//         box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
+//     }
+
+//     &__image-wrapper {
+//         position: relative;
+
+//         display: flex;
+//         justify-content: flex-end;
+
+//         opacity: 0;
+
+//         animation: heroImageEnter 1.2s cubic-bezier(.16, 1, .3, 1) 0.15s forwards;
+//     }
+
+//     &__img {
+//         position: relative;
+
+//         width: 75%;
+
+//         display: block;
+
+//         z-index: 2;
+
+//         animation: heroImageFloat 5s ease-in-out 1.3s infinite;
+//     }
+
+//     &__glow {
+//         position: absolute;
+
+//         width: 25rem;
+//         height: 25rem;
+
+//         top: 50%;
+//         right: 10%;
+
+//         transform: translateY(-50%);
+
+//         border-radius: 50%;
+
+//         background: rgba(255, 255, 255, 0.15);
+
+//         filter: blur(6rem);
+
+//         opacity: 0;
+
+//         animation: heroGlow 1.5s ease-out 0.8s forwards;
+
+//         z-index: 1;
+//     }
+// }
+
+// @keyframes heroFadeUp {
+
+//     from {
+//         opacity: 0;
+//         transform: translateY(3rem);
+//     }
+
+//     to {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+
+// }
+
+// @keyframes heroTitleReveal {
+
+//     from {
+//         opacity: 0;
+//         transform: translateY(100%);
+//     }
+
+//     to {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
+
+// }
+
+// @keyframes heroImageEnter {
+
+//     0% {
+//         opacity: 0;
+//         transform: translateX(8rem) scale(0.8);
+//     }
+
+//     70% {
+//         opacity: 1;
+//         transform: translateX(-1rem) scale(1.03);
+//     }
+
+//     100% {
+//         opacity: 1;
+//         transform: translateX(0) scale(1);
+//     }
+
+// }
+
+// @keyframes heroImageFloat {
+
+//     0%,
+//     100% {
+//         transform: translateY(0) rotate(0deg);
+//     }
+
+//     50% {
+//         transform: translateY(-1.2rem) rotate(0.5deg);
+//     }
+
+// }
+
+// @keyframes heroGlow {
+
+//     from {
+//         opacity: 0;
+//         transform: translateY(-50%) scale(0.5);
+//     }
+
+//     to {
+//         opacity: 1;
+//         transform: translateY(-50%) scale(1);
+//     }
+
+// }
+
+// // RESPONSIVE
+// // TABLET
+// @media (max-width: 75em) {
+
+//     .hero {
+//         padding: 5rem 1.8rem;
+//         gap: 3rem;
+
+//         &__text-box {
+//             align-items: center;
+//         }
+
+
+//         &__img {
+//             width: 80%;
+//         }
+//     }
+
+// }
+
+// // MOBILE
+// @media (max-width: 56.25em) {
+
+//     .hero {
+//         grid-template-columns: 1fr;
+
+//         padding: 4rem 0;
+
+//         gap: 5rem;
+
+
+//         &__text-box {
+//             max-width: 65rem;
+//         }
+
+
+//         &__image-wrapper {
+//             justify-content: center;
+//         }
+
+
+//         &__img {
+//             width: 65%;
+//         }
+
+
+//         &__glow {
+//             right: 50%;
+//             transform: translate(50%, -50%);
+//         }
+//     }
+
+// }
+
+// // SMALL MOBILE
+// @media (max-width: 37.5em) {
+
+//     .hero-section {
+//         padding: 0 1.6rem;
+//     }
+
+
+//     .hero {
+//         padding: 3rem 0;
+
+//         gap: 3.5rem;
+
+
+//         &__text-box {
+//             gap: 2rem;
+//         }
+
+
+//         &__subtitle {
+//             font-size: 1.5rem;
+//         }
+
+
+//         &__img {
+//             width: 85%;
+//         }
+//     }
+
+// }
+
+
+// @media (prefers-reduced-motion: reduce) {
+
+//     .hero__subtitle,
+//     .hero__title,
+//     .hero__btn,
+//     .hero__image-wrapper,
+//     .hero__img,
+//     .hero__glow {
+//         animation: none;
+//         opacity: 1;
+//         transform: none;
+//     }
+
+// }
+
 .hero-section {
     max-width: 130rem;
     margin: 0 auto;
@@ -17,13 +293,19 @@
         gap: 2.8rem;
     }
 
+    // -----------------------------
+    // SUBTITLE
+    // -----------------------------
+
     &__subtitle {
         font-size: 2.2rem;
 
         opacity: 0;
-
-        animation: heroFadeUp 0.7s ease-out 0.1s forwards;
     }
+
+    // -----------------------------
+    // TITLE
+    // -----------------------------
 
     &__title-wrapper {
         overflow: hidden;
@@ -31,14 +313,14 @@
 
     &__title {
         opacity: 0;
-
-        animation: heroTitleReveal 0.9s cubic-bezier(.16, 1, .3, 1) 0.25s forwards;
     }
+
+    // -----------------------------
+    // BUTTON
+    // -----------------------------
 
     &__btn {
         opacity: 0;
-
-        animation: heroFadeUp 0.7s ease-out 0.5s forwards;
 
         transition:
             transform 0.3s ease,
@@ -51,6 +333,10 @@
         box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
     }
 
+    // -----------------------------
+    // IMAGE WRAPPER
+    // -----------------------------
+
     &__image-wrapper {
         position: relative;
 
@@ -58,9 +344,11 @@
         justify-content: flex-end;
 
         opacity: 0;
-
-        animation: heroImageEnter 1.2s cubic-bezier(.16, 1, .3, 1) 0.15s forwards;
     }
+
+    // -----------------------------
+    // IMAGE
+    // -----------------------------
 
     &__img {
         position: relative;
@@ -70,9 +358,11 @@
         display: block;
 
         z-index: 2;
-
-        animation: heroImageFloat 5s ease-in-out 1.3s infinite;
     }
+
+    // -----------------------------
+    // GLOW
+    // -----------------------------
 
     &__glow {
         position: absolute;
@@ -93,11 +383,84 @@
 
         opacity: 0;
 
-        animation: heroGlow 1.5s ease-out 0.8s forwards;
-
         z-index: 1;
     }
 }
+
+
+// ==================================================
+// HERO ANIMATIONS
+// ==================================================
+//
+// مهم:
+// انیمیشن‌ها فقط بعد از اضافه شدن
+// .page-loaded به body اجرا می‌شوند.
+// ==================================================
+
+body.page-loaded {
+
+    .hero {
+
+        // -----------------------------
+        // SUBTITLE
+        // -----------------------------
+
+        &__subtitle {
+            animation:
+                heroFadeUp 0.7s ease-out 0.1s forwards;
+        }
+
+        // -----------------------------
+        // TITLE
+        // -----------------------------
+
+        &__title {
+            animation:
+                heroTitleReveal 0.9s cubic-bezier(.16, 1, .3, 1) 0.25s forwards;
+        }
+
+        // -----------------------------
+        // BUTTON
+        // -----------------------------
+
+        &__btn {
+            animation:
+                heroFadeUp 0.7s ease-out 0.5s forwards;
+        }
+
+        // -----------------------------
+        // IMAGE WRAPPER
+        // -----------------------------
+
+        &__image-wrapper {
+            animation:
+                heroImageEnter 1.2s cubic-bezier(.16, 1, .3, 1) 0.15s forwards;
+        }
+
+        // -----------------------------
+        // FLOATING IMAGE
+        // -----------------------------
+
+        &__img {
+            animation:
+                heroImageFloat 5s ease-in-out 1.3s infinite;
+        }
+
+        // -----------------------------
+        // GLOW
+        // -----------------------------
+
+        &__glow {
+            animation:
+                heroGlow 1.5s ease-out 0.8s forwards;
+        }
+    }
+}
+
+
+// ==================================================
+// KEYFRAMES
+// ==================================================
 
 @keyframes heroFadeUp {
 
@@ -110,8 +473,8 @@
         opacity: 1;
         transform: translateY(0);
     }
-
 }
+
 
 @keyframes heroTitleReveal {
 
@@ -124,140 +487,162 @@
         opacity: 1;
         transform: translateY(0);
     }
-
 }
+
 
 @keyframes heroImageEnter {
 
     0% {
         opacity: 0;
-        transform: translateX(8rem) scale(0.8);
+        transform:
+            translateX(8rem) scale(0.8);
     }
 
     70% {
         opacity: 1;
-        transform: translateX(-1rem) scale(1.03);
+        transform:
+            translateX(-1rem) scale(1.03);
     }
 
     100% {
         opacity: 1;
-        transform: translateX(0) scale(1);
+        transform:
+            translateX(0) scale(1);
     }
-
 }
+
 
 @keyframes heroImageFloat {
 
     0%,
     100% {
-        transform: translateY(0) rotate(0deg);
+        transform:
+            translateY(0) rotate(0deg);
     }
 
     50% {
-        transform: translateY(-1.2rem) rotate(0.5deg);
+        transform:
+            translateY(-1.2rem) rotate(0.5deg);
     }
-
 }
+
 
 @keyframes heroGlow {
 
     from {
         opacity: 0;
-        transform: translateY(-50%) scale(0.5);
+
+        transform:
+            translateY(-50%) scale(0.5);
     }
 
     to {
         opacity: 1;
-        transform: translateY(-50%) scale(1);
-    }
 
+        transform:
+            translateY(-50%) scale(1);
+    }
 }
 
+
+// ==================================================
 // RESPONSIVE
+// ==================================================
+
+
+// -----------------------------
 // TABLET
+// -----------------------------
+
 @media (max-width: 75em) {
 
     .hero {
+
         padding: 5rem 1.8rem;
+
         gap: 3rem;
 
         &__text-box {
             align-items: center;
         }
 
-
         &__img {
             width: 80%;
         }
     }
-
 }
 
+
+// -----------------------------
 // MOBILE
+// -----------------------------
+
 @media (max-width: 56.25em) {
 
     .hero {
+
         grid-template-columns: 1fr;
 
         padding: 4rem 0;
 
         gap: 5rem;
 
-
         &__text-box {
             max-width: 65rem;
         }
-
 
         &__image-wrapper {
             justify-content: center;
         }
 
-
         &__img {
             width: 65%;
         }
 
-
         &__glow {
             right: 50%;
-            transform: translate(50%, -50%);
+
+            transform:
+                translate(50%, -50%);
         }
     }
-
 }
 
+
+// -----------------------------
 // SMALL MOBILE
+// -----------------------------
+
 @media (max-width: 37.5em) {
 
     .hero-section {
         padding: 0 1.6rem;
     }
 
-
     .hero {
+
         padding: 3rem 0;
 
         gap: 3.5rem;
-
 
         &__text-box {
             gap: 2rem;
         }
 
-
         &__subtitle {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
         }
-
 
         &__img {
             width: 85%;
         }
     }
-
 }
 
+
+// ==================================================
+// REDUCED MOTION
+// ==================================================
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -267,9 +652,11 @@
     .hero__image-wrapper,
     .hero__img,
     .hero__glow {
-        animation: none;
+
+        animation: none !important;
+
         opacity: 1;
+
         transform: none;
     }
-
 }

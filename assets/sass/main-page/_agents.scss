@@ -45,7 +45,7 @@
 // TABLET
 @media (max-width: 75em) {
     .agent {
-        padding: 10rem 0;
+        padding: 10rem 1.8rem;
         gap: 4rem;
     }
 }
@@ -53,8 +53,9 @@
 // MOBILE
 @media (max-width: 56.25em) {
     .agent {
+        text-align: center;
         grid-template-columns: 1fr;
-        padding: 6.4rem 0;
+        padding: 6.4rem 1.8rem;
         gap: 3.2rem;
         justify-content: center;
 
@@ -69,7 +70,11 @@
 
         &__img-box {
             grid-template-columns: 1fr;
-            gap: 1.2rem;
+            gap: 1.4rem;
+
+            img {
+                width: 80%;
+            }
         }
     }
 }
@@ -81,7 +86,8 @@
     }
 
     .agent {
-        padding: 6.4rem 0;
+        text-align: center;
+        padding: 6.4rem 1.4rem;
         gap: 3.2rem;
 
         &__text-box {

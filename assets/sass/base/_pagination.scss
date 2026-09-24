@@ -1,0 +1,67 @@
+.pagination {
+    margin-top: 6rem;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3.5rem;
+        list-style: none;
+        font-size: 1.8rem;
+
+        li a {
+            text-decoration: none;
+            color: $color-general-3;
+
+            transition:
+                color 0.3s ease,
+                transform 0.3s ease;
+
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__active {
+        color: $color-white !important;
+        background-color: $color-primary;
+        padding: 1rem;
+        border-radius: 10rem;
+        text-align: center;
+    }
+}
+
+// RESPONSIVE
+@media (max-width: 48em) {
+
+    .pagination {
+        margin-top: 5rem;
+
+        &__list {
+            gap: 2.5rem;
+            font-size: 1.6rem;
+        }
+
+        &__active {
+            padding: 0.8rem;
+        }
+    }
+}
+
+
+@media (max-width: 30em) {
+
+    .pagination {
+        margin-top: 4rem;
+
+        &__list {
+            gap: 1.5rem;
+            font-size: 1.4rem;
+        }
+
+        &__active {
+            padding: 0.7rem;
+        }
+    }
+}

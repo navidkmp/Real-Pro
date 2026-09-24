@@ -21,8 +21,7 @@
     }
 
     &__star {
-        margin-top: -2rem;
-        font-size: 1.6rem;
+        font-size: 2rem;
         color: rgb(214, 145, 16);
     }
 
@@ -94,7 +93,7 @@
             align-items: center;
             justify-content: center;
             gap: 0.8rem;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
         }
 
         svg {
@@ -152,7 +151,7 @@
     }
 
     &__agent {
-        width: 100%;
+        // width: 100%;
         min-width: 0;
         padding: 3rem;
         display: flex;
@@ -160,7 +159,7 @@
         align-self: start;
         border: 1px solid $color-general-7;
         border-radius: 1rem;
-        overflow: hidden;
+        // overflow: hidden;
     }
 
     &__ft {
@@ -169,7 +168,7 @@
     }
 
     &__profile-box {
-        width: 100%;
+        width: 80%;
         margin-top: 3rem;
         padding-top: 3rem;
         display: flex;
@@ -288,10 +287,6 @@
         &-view {
             grid-template-columns: 1fr;
             gap: 3rem;
-        }
-
-        &__agent {
-            width: 100%;
         }
 
         &__icon-box {
@@ -455,11 +450,6 @@
         &__btn-box {
             flex-direction: column;
             gap: 1rem;
-
-            .btn {
-                width: 100%;
-                flex: none;
-            }
         }
     }
 
