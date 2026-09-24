@@ -12,16 +12,19 @@
                     <a href="{% url 'about:about' %}" class="{% if request.resolver_match.url_name == 'about' %}navbar__active{% endif %}">About</a>
                 </li>
                 <li>
-                    <a href="{% url 'blog:blog' %}" class="{% if request.resolver_match.url_name == 'Blog' %}navbar__active{% endif %}">Blog</a>
+                    <a href="{% url 'blog:blog' %}" class="{% if request.resolver_match.namespace == 'blog' %}navbar__active{% endif %}">Blog</a>
                 </li>
                 <li>
                     <a href="#" class="{% if request.resolver_match.url_name == 'Listing' %}navbar__active{% endif %}">Listing</a>
                 </li>
                 <li>
+                    <a href="#" class="{% if request.resolver_match.url_name == 'shop' %}navbar__active{% endif %}">Shop</a>
+                </li>
+                <li>
                     <a href="{% url 'property:agent' %}" class="{% if request.resolver_match.url_name == 'agent' %}navbar__active{% endif %}">Agents</a>
                 </li>
                 <li>
-                    <a href="{% url 'contactus:contactus' %}" class="{% if request.resolver_match.url_name == 'contactus' %}navbar__active{% endif %}">Contact</a>
+                    <a href="{% url 'contact:contact' %}" class="{% if request.resolver_match.namespace == 'contact' %}navbar__active{% endif %}">Contact</a>
                 </li>
             </ul>
         </nav>
