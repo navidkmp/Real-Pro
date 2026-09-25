@@ -1,0 +1,29 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block title %}
+   Our properties at:  {{ blog_post.slug }}
+{% endblock %}
+
+{% block content %}
+    <!-- start details  -->
+    <section class="details-section">
+        <div class="details">
+            <div class="details__top">
+                <span class="text-top-text">Discover our properties from:</span>
+                <h3 class="heading-3">{{ blog_post.category.all.first }} - {{ blog_post.title }}</h3>
+            </div>
+            <div class="details__img">
+                <img src="{{ blog_post.image.url }}" alt="{{ blog_post.title }}">
+            </div>
+            <div class="details__text-box">
+                <div>
+                    <span class="details__title">Familiarize yourself with the available modes of learning</span>
+                    <p class="details__text">
+                        {{ blog_post.content }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end details  -->
+{% endblock %}

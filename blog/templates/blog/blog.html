@@ -1,5 +1,8 @@
 {% extends 'base.html' %}{% load static %}
 
+{% block title %}
+ blog posts
+{% endblock %}
 
 {% block content %}
     <!-- start blog image  -->
@@ -67,7 +70,7 @@
                 {% for post in blog_posts %}
                     <div class="blog">
                         <div>
-                            <a href=""> <img src="{{ post.image.url }}" alt="{{ post.title }}" class="blog__img"> </a>
+                            <a href="{{ post.get_absolute_url }}"><img src="{{ post.image.url }}" alt="{{ post.title }}" class="blog__img"> </a>
                         </div>
                         <div class="blog__text-box">
                             <div>
