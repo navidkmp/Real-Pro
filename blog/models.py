@@ -15,6 +15,8 @@ class Category(models.Model):
 class Post(models.Model):
     category = models.ManyToManyField(Category, related_name='blog_posts')
     title = models.CharField(max_length=100)
+    house_name = models.CharField(max_length=100, blank=True, null=True)
+    slug = models.SlugField(max_length=100, unique=True)
     content = models.TextField()
     image = models.ImageField(upload_to="blog_posts/", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)

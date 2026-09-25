@@ -281,7 +281,6 @@
 
 .hero {
     padding: 5.6rem 2rem;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
@@ -293,19 +292,11 @@
         gap: 2.8rem;
     }
 
-    // -----------------------------
-    // SUBTITLE
-    // -----------------------------
-
     &__subtitle {
         font-size: 2.2rem;
 
         opacity: 0;
     }
-
-    // -----------------------------
-    // TITLE
-    // -----------------------------
 
     &__title-wrapper {
         overflow: hidden;
@@ -315,13 +306,8 @@
         opacity: 0;
     }
 
-    // -----------------------------
-    // BUTTON
-    // -----------------------------
-
     &__btn {
         opacity: 0;
-
         transition:
             transform 0.3s ease,
             box-shadow 0.3s ease;
@@ -329,126 +315,64 @@
 
     &__btn:hover {
         transform: translateY(-0.4rem);
-
         box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
     }
 
-    // -----------------------------
-    // IMAGE WRAPPER
-    // -----------------------------
-
     &__image-wrapper {
         position: relative;
-
         display: flex;
         justify-content: flex-end;
-
         opacity: 0;
     }
-
-    // -----------------------------
-    // IMAGE
-    // -----------------------------
 
     &__img {
         position: relative;
-
         width: 75%;
-
         display: block;
-
         z-index: 2;
     }
 
-    // -----------------------------
-    // GLOW
-    // -----------------------------
-
     &__glow {
         position: absolute;
-
         width: 25rem;
         height: 25rem;
-
         top: 50%;
         right: 10%;
-
         transform: translateY(-50%);
-
         border-radius: 50%;
-
         background: rgba(255, 255, 255, 0.15);
-
         filter: blur(6rem);
-
         opacity: 0;
-
         z-index: 1;
     }
 }
 
-
-// ==================================================
-// HERO ANIMATIONS
-// ==================================================
-//
-// مهم:
-// انیمیشن‌ها فقط بعد از اضافه شدن
-// .page-loaded به body اجرا می‌شوند.
-// ==================================================
-
 body.page-loaded {
-
     .hero {
-
-        // -----------------------------
-        // SUBTITLE
-        // -----------------------------
-
         &__subtitle {
             animation:
                 heroFadeUp 0.7s ease-out 0.1s forwards;
         }
-
-        // -----------------------------
-        // TITLE
-        // -----------------------------
 
         &__title {
             animation:
                 heroTitleReveal 0.9s cubic-bezier(.16, 1, .3, 1) 0.25s forwards;
         }
 
-        // -----------------------------
-        // BUTTON
-        // -----------------------------
-
         &__btn {
             animation:
                 heroFadeUp 0.7s ease-out 0.5s forwards;
         }
-
-        // -----------------------------
-        // IMAGE WRAPPER
-        // -----------------------------
 
         &__image-wrapper {
             animation:
                 heroImageEnter 1.2s cubic-bezier(.16, 1, .3, 1) 0.15s forwards;
         }
 
-        // -----------------------------
-        // FLOATING IMAGE
-        // -----------------------------
-
         &__img {
             animation:
                 heroImageFloat 5s ease-in-out 1.3s infinite;
         }
-
-        // -----------------------------
-        // GLOW
-        // -----------------------------
 
         &__glow {
             animation:
@@ -457,13 +381,7 @@ body.page-loaded {
     }
 }
 
-
-// ==================================================
-// KEYFRAMES
-// ==================================================
-
 @keyframes heroFadeUp {
-
     from {
         opacity: 0;
         transform: translateY(3rem);
@@ -477,7 +395,6 @@ body.page-loaded {
 
 
 @keyframes heroTitleReveal {
-
     from {
         opacity: 0;
         transform: translateY(100%);
@@ -491,7 +408,6 @@ body.page-loaded {
 
 
 @keyframes heroImageEnter {
-
     0% {
         opacity: 0;
         transform:
@@ -528,38 +444,22 @@ body.page-loaded {
 
 
 @keyframes heroGlow {
-
     from {
         opacity: 0;
-
         transform:
             translateY(-50%) scale(0.5);
     }
 
     to {
         opacity: 1;
-
         transform:
             translateY(-50%) scale(1);
     }
 }
 
-
-// ==================================================
-// RESPONSIVE
-// ==================================================
-
-
-// -----------------------------
-// TABLET
-// -----------------------------
-
 @media (max-width: 75em) {
-
     .hero {
-
         padding: 5rem 1.8rem;
-
         gap: 3rem;
 
         &__text-box {
@@ -572,19 +472,10 @@ body.page-loaded {
     }
 }
 
-
-// -----------------------------
-// MOBILE
-// -----------------------------
-
 @media (max-width: 56.25em) {
-
     .hero {
-
         grid-template-columns: 1fr;
-
         padding: 4rem 0;
-
         gap: 5rem;
 
         &__text-box {
@@ -601,28 +492,19 @@ body.page-loaded {
 
         &__glow {
             right: 50%;
-
             transform:
                 translate(50%, -50%);
         }
     }
 }
 
-
-// -----------------------------
-// SMALL MOBILE
-// -----------------------------
-
 @media (max-width: 37.5em) {
-
     .hero-section {
         padding: 0 1.6rem;
     }
 
     .hero {
-
         padding: 3rem 0;
-
         gap: 3.5rem;
 
         &__text-box {
@@ -639,11 +521,6 @@ body.page-loaded {
     }
 }
 
-
-// ==================================================
-// REDUCED MOTION
-// ==================================================
-
 @media (prefers-reduced-motion: reduce) {
 
     .hero__subtitle,
@@ -654,9 +531,7 @@ body.page-loaded {
     .hero__glow {
 
         animation: none !important;
-
         opacity: 1;
-
         transform: none;
     }
 }

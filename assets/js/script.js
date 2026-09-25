@@ -2,10 +2,8 @@
 const cta = document.querySelector(".cta");
 
 if (cta) {
-
     const ctaObserver = new IntersectionObserver(
         (entries, observer) => {
-
             entries.forEach((entry) => {
 
                 if (entry.isIntersecting) {
@@ -14,18 +12,14 @@ if (cta) {
 
                     observer.unobserve(entry.target);
                 }
-
             });
-
         },
         {
             threshold: 0.25
         }
     );
-
     ctaObserver.observe(cta);
 }
-
 
 // VISION SECTION LOAD
 const visionSection = document.querySelector(".vision-section");
@@ -69,190 +63,93 @@ if (visionSection) {
     visionObserver.observe(visionSection);
 }
 
-
 // BLOG SECTION LOAD
 document.addEventListener("DOMContentLoaded", () => {
-
-    const blogCards =
-        document.querySelectorAll(".blog-section .blog");
-
-    if (!blogCards.length) {
-        return;
-    }
-
+    const blogCards = document.querySelectorAll(".blog-section .blog");
+    if (!blogCards.length) return;
 
     const blogObserver = new IntersectionObserver(
         (entries) => {
-
             entries.forEach((entry) => {
-
                 if (entry.isIntersecting) {
-
                     entry.target.classList.add("is-visible");
-
                     blogObserver.unobserve(entry.target);
                 }
-
             });
-
         },
-        {
-            threshold: 0.2
-        }
+        { threshold: 0.2 }
     );
 
-
-    blogCards.forEach((card) => {
-        blogObserver.observe(card);
-    });
-
+    blogCards.forEach((card) => blogObserver.observe(card));
 });
 
-
 // SHOPPING CART
-const products =
-    document.querySelectorAll(".product");
+const products = document.querySelectorAll('.product');
 
 
-products.forEach((product) => {
-
-    const btnPlus =
-        product.querySelector(".btn--plus");
-
-    const btnMin =
-        product.querySelector(".btn--min");
-
-    const btnDel =
-        product.querySelector(".btn--delete");
-
-    const countElement =
-        product.querySelector(".count");
-
-
-    // اگر اجزای محصول وجود نداشتند،
-    // اجرای این محصول را متوقف کن
-    if (
-        !btnPlus ||
-        !btnMin ||
-        !btnDel ||
-        !countElement
-    ) {
-        return;
-    }
-
+products.forEach(function (product) {
+    const btnPlus = product.querySelector('.btn--plus');
+    const btnMin = product.querySelector('.btn--min');
+    const btnDel = product.querySelector('.btn--delete');
+    const countElement = product.querySelector('.count');
 
     let count = 1;
 
-
-    // ADD
-    btnPlus.addEventListener("click", () => {
-
-        count++;
-
+    // add
+    btnPlus.addEventListener('click', function () {
+        count++
         countElement.textContent = count;
+    })
 
-    });
-
-
-    // MIN
-    btnMin.addEventListener("click", () => {
-
-        count--;
-
-        if (count <= 0) {
-
+    // min 
+    btnMin.addEventListener('click', function () {
+        count--
+        countElement.textContent = count;
+        if (count === 0) {
             product.remove();
-
-            return;
         }
+    })
 
-        countElement.textContent = count;
-
-    });
-
-
-    // DELETE
-    btnDel.addEventListener("click", () => {
-
+    // delete
+    btnDel.addEventListener('click', function () {
         product.remove();
+    })
+})
 
-    });
+// PROPERTY DETAILS SLIDER 
+const slider = document.querySelector('.property-details-image-box');
 
+let isDown = false;
+let startX;
+let scrollLeft;
+
+slider.addEventListener('mousedown', function (e) {
+    isDown = true;
+
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+
+    slider.style.cursor = 'grabbing';
 });
 
+slider.addEventListener('mouseleave', function () {
+    isDown = false;
+    slider.style.cursor = 'grab';
+});
 
-// PROPERTY DETAILS SLIDER
-const slider =
-    document.querySelector(".property-details-image-box");
+slider.addEventListener('mouseup', function () {
+    isDown = false;
+    slider.style.cursor = 'grab';
+});
 
+slider.addEventListener('mousemove', function (e) {
+    if (!isDown) return;
 
-if (slider) {
+    e.preventDefault();
 
-    let isDown = false;
-    let startX;
-    let scrollLeft;
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
 
+    slider.scrollLeft = scrollLeft - walk;
+});
 
-    // MOUSE DOWN
-    slider.addEventListener("mousedown", (e) => {
-
-        isDown = true;
-
-        startX =
-            e.pageX - slider.offsetLeft;
-
-        scrollLeft =
-            slider.scrollLeft;
-
-        slider.style.cursor =
-            "grabbing";
-
-    });
-
-
-    // MOUSE LEAVE
-    slider.addEventListener("mouseleave", () => {
-
-        isDown = false;
-
-        slider.style.cursor =
-            "grab";
-
-    });
-
-
-    // MOUSE UP
-    slider.addEventListener("mouseup", () => {
-
-        isDown = false;
-
-        slider.style.cursor =
-            "grab";
-
-    });
-
-
-    // MOUSE MOVE
-    slider.addEventListener("mousemove", (e) => {
-
-        if (!isDown) {
-            return;
-        }
-
-        e.preventDefault();
-
-
-        const x =
-            e.pageX - slider.offsetLeft;
-
-
-        const walk =
-            (x - startX) * 2;
-
-
-        slider.scrollLeft =
-            scrollLeft - walk;
-
-    });
-
-}

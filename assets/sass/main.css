@@ -3143,14 +3143,16 @@ body.page-loaded .hero__glow {
   font-size: 1.6rem;
 }
 .details__top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 .details__img {
   display: flex;
   justify-content: center;
-  width: 100%;
+}
+.details__img img {
+  width: 70%;
+  height: auto;
+  border-radius: 1rem;
 }
 .details__text-box {
   display: flex;
@@ -3184,7 +3186,7 @@ body.page-loaded .hero__glow {
     width: 100%;
   }
   .details__img img {
-    width: 100%;
+    width: 90%;
     height: auto;
     -o-object-fit: cover;
        object-fit: cover;
@@ -3213,7 +3215,7 @@ body.page-loaded .hero__glow {
     font-size: 1.4rem;
   }
   .details__img {
-    width: 100%;
+    width: 80%;
   }
   .details__img img {
     display: block;
