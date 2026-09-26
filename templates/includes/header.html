@@ -15,7 +15,7 @@
                     <a href="{% url 'blog:blog' %}" class="{% if request.resolver_match.namespace == 'blog' %}navbar__active{% endif %}">Blog</a>
                 </li>
                 <li>
-                    <a href="#" class="{% if request.resolver_match.url_name == 'Listing' %}navbar__active{% endif %}">Listing</a>
+                    <a href="{% url 'property:property_list' %}" class="{% if request.resolver_match.url_name == 'property_list' %}navbar__active{% endif %}">Property</a>
                 </li>
                 <li>
                     <a href="#" class="{% if request.resolver_match.url_name == 'shop' %}navbar__active{% endif %}">Shop</a>

@@ -3150,7 +3150,7 @@ body.page-loaded .hero__glow {
   justify-content: center;
 }
 .details__img img {
-  width: 70%;
+  width: 70vw;
   height: auto;
   border-radius: 1rem;
 }
