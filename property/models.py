@@ -18,15 +18,7 @@ class Property(models.Model):
     year_built = models.PositiveIntegerField()
     description = models.TextField()
     image = models.ImageField(upload_to='properties/', blank=True, null=True)
-
-    owner = models.ForeignKey(
-        'Owner',
-        on_delete=models.SET_NULL,
-        null=True,
-        blank=True,
-        related_name='properties'
-    )
-
+    owner = models.ForeignKey('Owner',on_delete=models.SET_NULL,null=True,blank=True,related_name='properties')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -39,47 +31,24 @@ class Property(models.Model):
     def __str__(self):
         return self.house_name
 
+    class Meta:
+        ordering = ['-created_at']
+
 
 
 class Owner(models.Model):
     name = models.CharField(max_length=100)
-
-    phone = models.CharField(
-        max_length=30
-    )
-
-    whatsapp = models.CharField(
-        max_length=30,
-        help_text="Use international format without +"
-    )
-
-    image = models.ImageField(
-        upload_to='owner_images/',
-        blank=True,
-        null=True
-    )
+    phone = models.CharField(max_length=30)
+    whatsapp = models.CharField(max_length=30)
+    image = models.ImageField(upload_to='owner_images/',blank=True,null=True)
 
     def __str__(self):
         return self.name
 
 
-class Meta:
-    ordering = ['order']
-
 class PropertyImage(models.Model):
-    property = models.ForeignKey(
-        Property,
-        on_delete=models.CASCADE,
-        related_name='images'
-    )
-
-    image = models.ImageField(
-        upload_to='properties_detail/'
-    )
-
-    order = models.PositiveIntegerField(
-        default=0
-    )
+    property = models.ForeignKey(Property,on_delete=models.CASCADE,related_name='images')
+    image = models.ImageField(upload_to='properties_detail/')
 
     def __str__(self):
         return f"{self.property.house_name} - Image"

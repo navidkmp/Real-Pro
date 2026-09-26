@@ -65,14 +65,14 @@
                                 </div>
                                 <div class="descover__price-box">
                                     <span>{{ house.price }}</span>
-                                    <button class="btn btn--outline">View Detail</button>
+                                    <a href="{% url 'property:property_detail' house.slug %}" class="btn btn--outline"> View Detail </a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                 {% endfor %}
-        </div>
+            </div>
         </div>
     </section>
     <!-- end property  -->

@@ -26,10 +26,7 @@ class PropertyAdmin(admin.ModelAdmin):
 
 @admin.register(PropertyImage)
 class PropertyImageAdmin(admin.ModelAdmin):
-    list_display = (
-        'property',
-        'order',
-    )
+    list_display = ('property',)
 
 
 admin.site.register(Agent)
