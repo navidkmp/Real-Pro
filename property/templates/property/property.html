@@ -13,18 +13,13 @@
                     <span class="property__filter">Most popular</span>
                 </div>
             </div>
-            <!-- properties  -->
-            <!-- items -->
             <div class="descover__items">
-                <!-- item 1 -->
-                <!-- front -->
                 {% for house in properties %}
                     <div class="descover__item">
                         <div class="descover__item__inner">
                             <div class="descover__item__front">
                                 <img src="{{ house.image.url }}" alt="" class="descover__item__img">
                             </div>
-                            <!-- back -->
                             <div class="descover__item__back">
                                 <div class="descover__item__text-box">
                                     <h6 class="heading-6">{{ house.house_name }}</h6>
@@ -70,7 +65,6 @@
                             </div>
                         </div>
                     </div>
-
                 {% endfor %}
             </div>
         </div>

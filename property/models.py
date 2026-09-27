@@ -35,7 +35,6 @@ class Property(models.Model):
         ordering = ['-created_at']
 
 
-
 class Owner(models.Model):
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=30)

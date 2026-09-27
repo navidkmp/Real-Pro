@@ -7,7 +7,6 @@ from .models import Property, Owner, PropertyImage
 class OwnerAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone', 'whatsapp')
 
-
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
     list_display = (
@@ -27,6 +26,5 @@ class PropertyAdmin(admin.ModelAdmin):
 @admin.register(PropertyImage)
 class PropertyImageAdmin(admin.ModelAdmin):
     list_display = ('property',)
-
 
 admin.site.register(Agent)

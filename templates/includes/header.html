@@ -1,9 +1,4 @@
-
-
-
-
-
-{% load static %}<!-- start navbar  -->
+{% load static %}
 <header class="navbar-section">
     <div class="navbar">
         <div>
@@ -39,9 +34,7 @@
                 <a href="{% url 'registration:logout' %}" class="btn btn--full btn--logout"> logout</a>
             {% else %}
                 <a href="{% url 'registration:signup' %}" class="btn btn--full">Sign Up</a>
-
             {% endif %}
-
 
             <a href="#">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

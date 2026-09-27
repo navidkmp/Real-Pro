@@ -5,7 +5,6 @@
 {% endblock %}
 
 {% block content %}
-
     <!-- start checkout -->
     <section class="checkout-section">
         <div class="checkout">
@@ -68,21 +67,16 @@
                                             ${{ item.total_price }}
                                         </span>
                                     </div>
-
                                 {% empty %}
-
                                     <div class="order-box__product">
-
                                         <span class="order-box__product-name">
                                             Your cart is empty.
                                         </span>
                                     </div>
-
                                 {% endfor %}
                             </div>
                             <div class="order-box__totals">
                                 <div class="order-box__row">
-
                                     <span>
                                         Subtotal
                                     </span> <span>
@@ -90,7 +84,6 @@
                                     </span>
                                 </div>
                                 <div class="order-box__row order-box__row--total">
-
                                     <span>
                                         Total
                                     </span> <strong> ${{ total }}
@@ -112,5 +105,4 @@
         </div>
     </section>
     <!-- end checkout -->
-
 {% endblock %}

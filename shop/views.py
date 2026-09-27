@@ -1,5 +1,8 @@
 from django.contrib.auth.decorators import login_required
-
+from django.db import transaction
+from django.shortcuts import render, redirect, get_object_or_404
+from django.core.paginator import Paginator
+from .models import Product, CartItem, Order, OrderItem
 
 @login_required
 def shop(request):
@@ -7,8 +10,8 @@ def shop(request):
     paginator = Paginator(products_list, 6)
     page_number = request.GET.get('page')
     products = paginator.get_page(page_number)
-    return render(request, 'shop/shop.html', {'products': products})
 
+    return render(request, 'shop/shop.html', {'products': products})
 
 @login_required
 def cart(request):
@@ -16,7 +19,6 @@ def cart(request):
     total = sum(item.product.price * item.quantity for item in cart_items)
 
     return render(request, 'shop/cart.html', {'cart_items': cart_items, 'total': total, })
-
 
 @login_required
 def add_to_cart(request, product_id):
@@ -29,7 +31,6 @@ def add_to_cart(request, product_id):
 
     return redirect('shop:cart')
 
-
 @login_required
 def increase_cart(request, item_id):
     item = get_object_or_404(CartItem, id=item_id, user=request.user)
@@ -37,7 +38,6 @@ def increase_cart(request, item_id):
     item.save()
 
     return redirect('shop:cart')
-
 
 @login_required
 def decrease_cart(request, item_id):
@@ -56,16 +56,8 @@ def decrease_cart(request, item_id):
 def remove_from_cart(request, item_id):
     item = get_object_or_404(CartItem, id=item_id, user=request.user)
     item.delete()
+
     return redirect('shop:cart')
-
-
-from django.db import transaction
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth.decorators import login_required
-from django.core.paginator import Paginator
-
-from .models import Product, CartItem, Order, OrderItem
-
 
 @login_required
 def checkout(request):
@@ -79,7 +71,6 @@ def checkout(request):
     )
 
     if request.method == 'POST':
-
         if not cart_items.exists():
             return redirect('shop:cart')
 
@@ -91,10 +82,8 @@ def checkout(request):
         phone = request.POST.get('phone')
         email = request.POST.get('email')
         notes = request.POST.get('notes')
-
         with transaction.atomic():
 
-            # ساخت سفارش
             order = Order.objects.create(
                 user=request.user,
                 first_name=first_name,
@@ -108,7 +97,6 @@ def checkout(request):
                 total=total,
             )
 
-            # انتقال محصولات Cart به Order
             for item in cart_items:
                 OrderItem.objects.create(
                     order=order,
@@ -117,7 +105,6 @@ def checkout(request):
                     price=item.product.price,
                 )
 
-            # خالی کردن سبد خرید
             cart_items.delete()
 
         return redirect('shop:shop')

@@ -63,14 +63,6 @@ def signin(request):
 
     return render(request, 'registration/signin.html')
 
-
-
-
-def forget_pass(request):
-    return render(request, 'registration/password_reset/forget.html')
-
-
-
 def logout_user(request):
     logout(request)
     return redirect('home:home')

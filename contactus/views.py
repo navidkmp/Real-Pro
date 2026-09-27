@@ -1,9 +1,6 @@
 from django.shortcuts import render, redirect
 from contactus.models import Contact
 
-
-
-
 def contactus(request):
     if request.user.is_authenticated:
         if request.method == "POST":
@@ -13,4 +10,3 @@ def contactus(request):
         return render(request,'contactus/contactus.html')
     else:
         return redirect('registration:signin')
-

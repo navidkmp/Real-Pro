@@ -1,4 +1,4 @@
-{% load static %}<!-- start footer  -->
+{% load static %}
 <footer class="footer-section">
     <div class="footer">
         <!-- info -->
@@ -43,7 +43,7 @@
                         <a href="{% url 'about:about' %}" class="footer__link">About Us</a>
                     </li>
                     <li>
-                        <a href="property.html" class="footer__link">Our Projects</a>
+                        <a href="{% url 'property:property_list' %}" class="footer__link">Our Projects</a>
                     </li>
                 </ul>
             </nav>
@@ -54,7 +54,7 @@
                 <ul class="footer__list">
                     <span class="footer__list-title">Links</span>
                     <li>
-                        <a href="shop.html" class="footer__link">Services </a>
+                        <a href="{% url 'shop:shop' %}" class="footer__link">Services </a>
                     </li>
                     <li>
                         <a href="{% url 'contact:contact' %}" class="footer__link">Contact</a>
@@ -68,7 +68,7 @@
                 <ul class="footer__list">
                     <span class="footer__list-title">T&C</span>
                     <li>
-                        <a href="property.html" class="footer__link">Property on sale</a>
+                        <a href="{% url 'property:property_list' %}" class="footer__link">Property on sale</a>
                     </li>
                     <li>
                         <a href="{% url 'about:about' %}" class="footer__link">About Us</a>
@@ -80,4 +80,4 @@
             </nav>
         </div>
     </div>
-</footer><!-- end footer  -->
+</footer>
