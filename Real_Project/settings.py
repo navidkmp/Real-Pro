@@ -138,3 +138,5 @@ MAILERS = {
 CSRF_TRUSTED_ORIGINS = [
     "https://telegrammic-unconsiderablely-ferdinand.ngrok-free.dev",
 ]
+
+LOGIN_URL = 'registration:signin'

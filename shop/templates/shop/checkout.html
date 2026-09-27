@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Checkout
+{% endblock %}
+
+{% block content %}
+
+    <!-- start checkout -->
+    <section class="checkout-section">
+        <div class="checkout">
+            <!-- Header -->
+            <div class="checkout__header">
+                <h1 class="checkout__title">Check Out</h1>
+            </div>
+            <form class="checkout-form" method="POST">
+                {% csrf_token %}
+                <div class="checkout__content">
+                    <!-- Billing Details -->
+                    <div class="checkout__billing">
+                        <h2 class="checkout__heading">
+                            Billing Details </h2>
+                        <div class="checkout-form__grid">
+                            <div class="checkout-form__group">
+                                <input type="text" id="first-name" name="first_name" class="checkout-form__input" placeholder="First Name *" required>
+                            </div>
+                            <div class="checkout-form__group">
+                                <input type="text" id="last-name" name="last_name" class="checkout-form__input" placeholder="Last Name *" required>
+                            </div>
+                            <div class="checkout-form__group">
+                                <input type="text" id="company" name="company" class="checkout-form__input" placeholder="Company Name (optional)">
+                            </div>
+                            <div class="checkout-form__group">
+                                <input type="text" name="address" class="checkout-form__input" placeholder="Street Address *" required>
+                            </div>
+                            <div class="checkout-form__group">
+                                <input type="text" name="city" class="checkout-form__input" placeholder="Town / City *" required>
+                            </div>
+                            <div class="checkout-form__group">
+                                <input type="tel" name="phone" class="checkout-form__input" placeholder="Phone *" required>
+                            </div>
+                            <div class="checkout-form__group">
+                                <input type="email" name="email" class="checkout-form__input" placeholder="Email Address *" required>
+                            </div>
+                        </div>
+                        <div class="checkout-form__group checkout-form__group--full">
+
+                            <textarea name="notes" class="checkout-form__textarea" placeholder="Order notes (Optional)"></textarea>
+                        </div>
+                    </div>
+                    <!-- Order -->
+                    <div class="checkout__order">
+                        <h2 class="checkout__heading">
+                            Your Order </h2>
+                        <div class="order-box">
+                            <div class="order-box__header">
+                                <span>Product</span> <span>Subtotal</span>
+                            </div>
+                            <div class="order-box__products">
+                                {% for item in cart_items %}
+
+                                    <div class="order-box__product">
+
+                                        <span class="order-box__product-name">
+                                            {{ item.product.name }}
+                                            × {{ item.quantity }}
+                                        </span> <span class="order-box__price">
+                                            ${{ item.total_price }}
+                                        </span>
+                                    </div>
+
+                                {% empty %}
+
+                                    <div class="order-box__product">
+
+                                        <span class="order-box__product-name">
+                                            Your cart is empty.
+                                        </span>
+                                    </div>
+
+                                {% endfor %}
+                            </div>
+                            <div class="order-box__totals">
+                                <div class="order-box__row">
+
+                                    <span>
+                                        Subtotal
+                                    </span> <span>
+                                        ${{ total }}
+                                    </span>
+                                </div>
+                                <div class="order-box__row order-box__row--total">
+
+                                    <span>
+                                        Total
+                                    </span> <strong> ${{ total }}
+                                </strong>
+                                </div>
+                            </div>
+                            <div class="order-box__privacy">
+                                <p>
+                                    Your personal data will be used to process your order, support your experience throughout this website, and for other purposes described in our
+                                    <a href="#"> Privacy Policy </a>. </p>
+                            </div>
+                            <button class="order-box__button" type="submit">
+                                Place Order
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- end checkout -->
+
+{% endblock %}
