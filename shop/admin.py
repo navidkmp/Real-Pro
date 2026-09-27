@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Product, CartItem, Order, OrderItem
+from .models import Product, CartItem, Order, OrderItem, Coupon
+
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
@@ -41,3 +42,6 @@ class OrderItemAdmin(admin.ModelAdmin):
         'quantity',
         'price',
     )
+
+
+admin.site.register(Coupon)

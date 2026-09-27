@@ -1,15 +1,17 @@
-{% extends 'base.html' %}{% load static %}
+```html{% extends 'base.html' %}{% load static %}
 
 {% block title %}
     Cart
 {% endblock %}
 
 {% block content %}
+
     <!-- start cart -->
     <section class="cart-section">
         <div class="cart">
             <div class="cart__products">
                 {% for item in cart_items %}
+
                     <div class="product">
                         <!-- delete -->
                         <a href="{% url 'shop:remove' item.id %}" class="btn btn--transparent btn--delete">
@@ -20,21 +22,29 @@
                         </a>
                         <!-- product image -->
                         {% if item.product.image %}
+
                             <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="product__img">
+
                         {% else %}
+
                             <img src="{% static 'img/cart/cart-img.png' %}" alt="{{ item.product.name }}" class="product__img">
+
                         {% endif %}
+
+
                         <!-- product name -->
                         <div>
-                        <span class="product__text">
-                            {{ item.product.name }}
-                        </span>
+
+                            <span class="product__text">
+                                {{ item.product.name }}
+                            </span>
                         </div>
                         <!-- price + quantity -->
                         <div class="product__price-box">
-                        <span>
-                            ${{ item.product.price }}
-                        </span>
+
+                            <span>
+                                ${{ item.product.price }}
+                            </span>
                             <div class="product__btn btn--outline">
                                 <!-- decrease -->
                                 <a href="{% url 'shop:decrease' item.id %}" class="btn btn--transparent btn--min">
@@ -44,18 +54,20 @@
                                 </a>
                                 <!-- quantity -->
                                 <span class="count">
-                                {{ item.quantity }}
-                            </span>
+                                    {{ item.quantity }}
+                                </span>
                                 <!-- increase -->
                                 <a href="{% url 'shop:increase' item.id %}" class="btn btn--transparent btn--plus">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13H11V19C11 19.5523 11 19 12 19C13 19 13 18.5523 13 18V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5Z" fill="#8A8A8A"/>
+                                        <path d="M13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5V11H5C4.44772 5 4.44772 13 5 13H11V19C11 19.5523 11 19.5523 12 19C13 19 13 18.5523 13 19V13H19C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11H13V5Z" fill="#8A8A8A"/>
                                     </svg>
                                 </a>
                             </div>
                         </div>
                     </div>
+
                 {% empty %}
+
                     <!-- empty cart -->
                     <div class="cart__empty">
                         <h3>
@@ -65,31 +77,59 @@
 
                 {% endfor %}
             </div>
+
+
             {% if cart_items %}
+
                 <div class="cart__order">
                     <h3 class="heading-3">
                         Cart totals </h3>
                     <!-- coupon -->
-                    <div class="cart__coupon">
-                    <span>
-                        coupon
-                    </span> <input type="text" name="coupon" placeholder="Add Coupon Here">
-                    </div>
-                    <!-- total -->
-                    <div class="cart__price-box">
-                    <span class="cart__total">
-                        Total
-                    </span> <span class="cart__price">
-                        ${{ total }}
-                    </span>
-                    </div>
-                    <!-- checkout -->
-                    <div class="cart__btn">
-                        <a href="{% url 'shop:checkout' %}" class="btn btn--full"> Proceed to checkout </a>
-                    </div>
+                    <form method="POST" action="{% url 'shop:check_coupon' %}">
+                        {% csrf_token %}
+                        <div class="cart__coupon">
+
+                            <span>
+                                coupon
+                            </span>
+                            <input type="text" name="coupon" value="{{ coupon_code|default:'' }}" placeholder="Add Coupon Here">
+                        </div>
+                        <!-- total -->
+                        <div class="cart__price-box">
+
+                            <span class="cart__total">
+                                Total
+                            </span> <span class="cart__price">
+                                ${{ total }}
+                            </span>
+                        </div>
+                        <!-- checkout -->
+                        <div class="cart__btn">
+                            <a href="{% url 'shop:checkout' %}" class="btn btn--full"> Proceed to checkout </a>
+                            <button type="submit" class="btn btn--full">
+                                Check coupon
+                            </button>
+                        </div>
+                    </form>
+                    <!-- messages -->
+                    {% if messages %}
+
+                        {% for message in messages %}
+
+                            <p class="coupon-message">
+                                {{ message }}
+                            </p>
+
+                        {% endfor %}
+
+                    {% endif %}
                 </div>
+
             {% endif %}
         </div>
     </section>
+
     <!-- end cart -->
+
 {% endblock %}
+```

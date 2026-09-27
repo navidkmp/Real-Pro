@@ -3777,12 +3777,15 @@ body.page-loaded .hero__glow {
   font-weight: bold;
 }
 .cart__btn {
+  text-align: center;
   margin-top: 4rem;
   padding-top: 4rem;
   border-top: 2px solid #B0B0B0;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 
 .product {

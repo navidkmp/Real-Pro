@@ -1,4 +1,5 @@
 from django.urls import path
+
 from . import views
 
 app_name = 'shop'
@@ -11,4 +12,5 @@ urlpatterns = [
     path('decrease/<int:item_id>/', views.decrease_cart, name='decrease'),
     path('remove/<int:item_id>/', views.remove_from_cart, name='remove'),
     path('checkout/', views.checkout, name='checkout'),
+    path('check-coupon/',views.check_coupon,name='check_coupon'),
 ]
