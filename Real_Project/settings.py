@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'contactus.apps.ContactusConfig',
     'property.apps.PropertyConfig',
     'blog.apps.BlogConfig',
+    'shop.apps.ShopConfig',
 ]
 
 MIDDLEWARE = [

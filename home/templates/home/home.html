@@ -26,15 +26,15 @@
             <div class="hero__text-box">
 
                 <span class="hero__subtitle">
-                    More than 10M+ house avaiable for sell & rent
+                    More than 10M+ house available for sell & rent
                 </span>
                 <div class="hero__title-wrapper">
                     <h1 class="heading-1 hero__title">
                         Find Your Next Perfect Place </h1>
                 </div>
-                <button class="btn btn--full hero__btn">
+                <a href="{% url 'property:property_list' %}" class="btn btn--full hero__btn">
                     Explore More
-                </button>
+                </a>
             </div>
             <div class="hero__image-wrapper">
                 <div class="hero__glow"></div>
@@ -49,7 +49,7 @@
         <div class="descover">
             <div class="descover__top">
                 <span class="text-top-text">Discover our properties</span>
-                <h3 class="heading-3">lastes proprety</h3>
+                <h3 class="heading-3">lastest property</h3>
             </div>
             <div class="descover__items">
                 {% for house in properties %}

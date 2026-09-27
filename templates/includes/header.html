@@ -23,7 +23,7 @@
                     <a href="{% url 'property:property_list' %}" class="{% if request.resolver_match.url_name == 'property_list' %}navbar__active{% endif %}">Property</a>
                 </li>
                 <li>
-                    <a href="#" class="{% if request.resolver_match.url_name == 'shop' %}navbar__active{% endif %}">Shop</a>
+                    <a href="{% url 'shop:shop' %}" class="{% if request.resolver_match.url_name == 'shop' %}navbar__active{% endif %}">Shop</a>
                 </li>
                 <li>
                     <a href="{% url 'property:agent' %}" class="{% if request.resolver_match.url_name == 'agent' %}navbar__active{% endif %}">Agents</a>

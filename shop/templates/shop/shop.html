@@ -1,0 +1,120 @@
+{% extends 'base.html' %}{% load static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <!-- start shop -->
+    <section class="shop-section">
+        <div class="shop">
+            <div class="shop__title">
+                <h3 class="heading-3">Shop</h3>
+            </div>
+            <div class="shop__container">
+                <!-- shpping list  -->
+                <div class="shop__list">
+                    <article class="shop__item">
+                        <img src="{% static '/img/shop/shop-img.png' %}" alt="chair image" class="shop__item__img">
+                        <span class="shop__item__title">Solid wood ceiling light</span>
+                        <span class="shop__item__price">$34.00 - $52.00</span>
+                        <button class="btn btn--full btn--shop">add to cart</button>
+                    </article>
+                    <article class="shop__item">
+                        <img src="{% static '/img/shop/shop-img.png' %}" alt="chair image" class="shop__item__img">
+                        <span class="shop__item__title">Solid wood ceiling light</span>
+                        <span class="shop__item__price">$34.00 - $52.00</span>
+                        <button class="btn btn--full btn--shop">add to cart</button>
+                    </article>
+                    <article class="shop__item">
+                        <img src="{% static '/img/shop/shop-img.png' %}" alt="chair image" class="shop__item__img">
+                        <span class="shop__item__title">Solid wood ceiling light</span>
+                        <span class="shop__item__price">$34.00 - $52.00</span>
+                        <button class="btn btn--full btn--shop">add to cart</button>
+                    </article>
+                    <article class="shop__item">
+                        <img src="{% static '/img/shop/shop-img.png' %}" alt="chair image" class="shop__item__img">
+                        <span class="shop__item__title">Solid wood ceiling light</span>
+                        <span class="shop__item__price">$34.00 - $52.00</span>
+                        <button class="btn btn--full btn--shop">add to cart</button>
+                    </article>
+                    <article class="shop__item">
+                        <img src="{% static '/img/shop/shop-img.png' %}" alt="chair image" class="shop__item__img">
+                        <span class="shop__item__title">Solid wood ceiling light</span>
+                        <span class="shop__item__price">$34.00 - $52.00</span>
+                        <button class="btn btn--full btn--shop">add to cart</button>
+                    </article>
+                    <article class="shop__item">
+                        <img src="{% static '/img/shop/shop-img.png' %}" alt="chair image" class="shop__item__img">
+                        <span class="shop__item__title">Solid wood ceiling light</span>
+                        <span class="shop__item__price">$34.00 - $52.00</span>
+                        <button class="btn btn--full btn--shop">add to cart</button>
+                    </article>
+                </div>
+                <!-- shopping cart  -->
+                <div class="shop__cart">
+                    <div class="shop__cart__category">
+                        <span class="shop__cart__title">Categories</span>
+                        <ul class="shop__cart__category__list">
+                            <li>Colections <span>(14)</span></li>
+                            <li>Home Decor <span>(14)</span></li>
+                            <li>Uncategorized <span>(14)</span></li>
+                        </ul>
+                    </div>
+                    <div class="shop__cart__size">
+                        <span class="shop__cart__title">size</span>
+                        <ul class="shop__cart__size__list">
+                            <li>Medium <span>(14)</span></li>
+                            <li>Small<span>(14)</span></li>
+                            <li>Large <span>(14)</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="shop__cart__tags">
+                    <span class="shop__cart__title">Tags</span>
+                    <div class="shop__cart__tags__box">
+                        <span class="shop__cart__tag">Leadership</span> <span class="shop__cart__tag">Guide</span>
+                        <span class="shop__cart__tag">TestCase One</span>
+                        <span class="shop__cart__tag">TestCase Hai</span>
+                        <span class="shop__cart__tag">TestCase Ba</span> <span class="shop__cart__tag">TestCase</span>
+                    </div>
+                </div>
+            </div>
+            <!-- pagination -->
+            <div class="pagination">
+                <ul class="pagination__list">
+                    <li>
+                        <a href="#">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10.0596 13.28L5.7129 8.9333C5.19957 8.41997 5.19957 7.57997 5.7129 7.06664L10.0596 2.71997" stroke="#636366" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="pagination__active">1</a>
+                    </li>
+                    <li>
+                        <a href="#">2</a>
+                    </li>
+                    <li>
+                        <a href="#">3</a>
+                    </li>
+                    <li>
+                        <a href="#">4</a>
+                    </li>
+                    <li>
+                        <a href="#">5</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5.94043 13.28L10.2871 8.9333C10.8004 8.41997 10.8004 7.57997 10.2871 7.06664L5.94043 2.71997" stroke="#636366" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- end shop -->
+{% endblock %}
