@@ -32,27 +32,25 @@ def cart(request):
         user=request.user
     ).select_related('product')
 
-    # قیمت اصلی سبد
+
     subtotal = sum(
         item.product.price * item.quantity
         for item in cart_items
     )
 
-    # اطلاعات کوپن از session
+
     coupon_code = request.session.get('coupon_code')
     discount_percent = request.session.get(
         'discount_percent',
         0
     )
 
-    # محاسبه تخفیف
     discount = (
         subtotal
         * Decimal(str(discount_percent))
         / Decimal('100')
     )
 
-    # قیمت نهایی
     total = subtotal - discount
 
     return render(
@@ -86,7 +84,7 @@ def add_to_cart(request, product_id):
 
     cart_item.save()
 
-    return redirect('shop:cart')
+    return redirect('shop:shop')
 
 
 @login_required
@@ -116,11 +114,13 @@ def decrease_cart(request, item_id):
         item.save()
     else:
         item.delete()
+        return redirect('shop:shop')
 
     return redirect('shop:cart')
 
 
 @login_required
+
 def remove_from_cart(request, item_id):
     item = get_object_or_404(
         CartItem,
@@ -129,6 +129,9 @@ def remove_from_cart(request, item_id):
     )
 
     item.delete()
+    if not CartItem.objects.filter(user=request.user).exists():
+        return redirect('shop:shop')
+
 
     return redirect('shop:cart')
 
@@ -139,13 +142,11 @@ def check_coupon(request):
     if request.method != 'POST':
         return redirect('shop:cart')
 
-    # گرفتن کد کوپن
     code = request.POST.get(
         'coupon',
         ''
     ).strip().upper()
 
-    # اگر فیلد خالی باشد
     if not code:
         request.session.pop('coupon_code', None)
         request.session.pop('discount_percent', None)
@@ -160,25 +161,21 @@ def check_coupon(request):
 
     except Coupon.DoesNotExist:
 
-        # حذف کوپن قبلی
         request.session.pop('coupon_code', None)
         request.session.pop('discount_percent', None)
 
 
         return redirect('shop:cart')
 
-    # بررسی مصرف قبلی توسط همین کاربر
     if coupon.used_by.filter(
         id=request.user.id
     ).exists():
 
-        # حذف کوپن از session
         request.session.pop('coupon_code', None)
         request.session.pop('discount_percent', None)
 
         return redirect('shop:cart')
 
-    # ذخیره کوپن در session
     request.session['coupon_code'] = coupon.code
     request.session['discount_percent'] = str(
         coupon.discount_percent
@@ -194,17 +191,15 @@ def checkout(request):
         user=request.user
     ).select_related('product')
 
-    # اگر سبد خالی باشد
+
     if not cart_items.exists():
         return redirect('shop:cart')
 
-    # قیمت اصلی
     subtotal = sum(
         item.product.price * item.quantity
         for item in cart_items
     )
 
-    # اطلاعات کوپن
     coupon_code = request.session.get('coupon_code')
     discount_percent = request.session.get(
         'discount_percent',
@@ -213,7 +208,6 @@ def checkout(request):
 
     coupon = None
 
-    # اگر کوپن در session وجود داشته باشد
     if coupon_code:
 
         try:
@@ -224,7 +218,6 @@ def checkout(request):
 
         except Coupon.DoesNotExist:
 
-            # کوپن دیگر معتبر نیست
             request.session.pop('coupon_code', None)
             request.session.pop('discount_percent', None)
 
@@ -233,7 +226,6 @@ def checkout(request):
 
         else:
 
-            # بررسی مصرف قبلی
             if coupon.used_by.filter(
                 id=request.user.id
             ).exists():
@@ -246,14 +238,12 @@ def checkout(request):
                 discount_percent = 0
 
 
-    # محاسبه تخفیف
     discount = (
         subtotal
         * Decimal(str(discount_percent))
         / Decimal('100')
     )
 
-    # قیمت نهایی
     total = subtotal - discount
 
     if request.method == 'POST':
@@ -269,20 +259,17 @@ def checkout(request):
 
         with transaction.atomic():
 
-            # دوباره کوپن را داخل transaction بررسی می‌کنیم
             if coupon:
 
                 coupon = Coupon.objects.select_for_update().get(
                     id=coupon.id
                 )
 
-                # جلوگیری از استفاده مجدد
                 if coupon.used_by.filter(
                     id=request.user.id
                 ).exists():
                     return redirect('shop:cart')
 
-                # قیمت را دوباره محاسبه می‌کنیم
                 discount = (
                     subtotal
                     * coupon.discount_percent
@@ -291,7 +278,6 @@ def checkout(request):
 
                 total = subtotal - discount
 
-            # ساخت Order
             order = Order.objects.create(
                 user=request.user,
                 first_name=first_name,
@@ -305,7 +291,6 @@ def checkout(request):
                 total=total,
             )
 
-            # ساخت OrderItem
             for item in cart_items:
 
                 OrderItem.objects.create(
@@ -315,18 +300,15 @@ def checkout(request):
                     price=item.product.price,
                 )
 
-            # ثبت مصرف کوپن
             if coupon:
                 coupon.used_by.add(request.user)
 
-            # خالی کردن سبد
             cart_items.delete()
 
-        # پاک کردن کوپن از session
         request.session.pop('coupon_code', None)
         request.session.pop('discount_percent', None)
 
-        return redirect('shop:shop')
+        return redirect('home:home')
 
     return render(
         request,

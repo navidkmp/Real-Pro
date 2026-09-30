@@ -1,7 +1,7 @@
 {% extends 'base.html' %}{% load static %}
 
 {% block title %}
-    properties
+    properties || Real pro
 {% endblock %}
 
 {% block content %}
@@ -66,6 +66,35 @@
                         </div>
                     </div>
                 {% endfor %}
+            </div>
+        <div class="pagination">
+                <ul class="pagination__list">
+                    {% if properties.has_previous %}
+                        <li>
+                            <a href="?page={{ properties.previous_page_number }}">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.0596 13.28L5.7129 8.9333C5.19957 8.41997 5.19957 7.57997 5.7129 7.06664L10.0596 2.71997" stroke="#636366" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% for num in properties.paginator.page_range %}
+                        <li>
+                            <a href="?page={{ num }}" class="{% if properties.number == num %}pagination__active{% endif %}">
+                                {{ num }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                    {% if properties.has_next %}
+                        <li>
+                            <a href="?page={{ properties.next_page_number }}">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.94043 13.28L10.2871 8.9333C10.8004 8.41997 10.8004 7.57997 10.2871 7.06664L5.94043 2.71997" stroke="#636366" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </li>
+                    {% endif %}
+                </ul>
             </div>
         </div>
     </section>

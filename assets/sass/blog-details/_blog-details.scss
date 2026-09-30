@@ -28,7 +28,6 @@
         }
     }
 
-
     &__text-box {
         display: flex;
         justify-content: center;
@@ -52,10 +51,8 @@
     }
 }
 
-// ─────────────────────────────────────
-// Tablet
-// ─────────────────────────────────────
-
+// RESPONSIVE
+// TABLET
 @media (max-width: 56.25em) {
     .details-section {
         padding: 0 2rem;
@@ -96,11 +93,7 @@
     }
 }
 
-
-// ─────────────────────────────────────
-// Mobile
-// ─────────────────────────────────────
-
+// MOBILE
 @media (max-width: 37.5em) {
     .details-section {
         padding: 0 1.6rem;
@@ -143,11 +136,7 @@
     }
 }
 
-
-// ─────────────────────────────────────
-// Small Mobile
-// ─────────────────────────────────────
-
+// SMALL MOBILE
 @media (max-width: 25em) {
     .details {
         &__top {

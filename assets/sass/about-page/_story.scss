@@ -1,37 +1,4 @@
-// .story-section {
-//     max-width: 130rem;
-//     margin: 0 auto;
-// }
-
-// .story {
-//     padding: 8.6rem 0;
-//     display: grid;
-//     grid-template-columns: 1fr 1fr;
-
-//     &__img-box {
-//         width: 100%;
-//     }
-
-//     &__text-box {
-//         padding: 5.6rem;
-//         display: flex;
-//         flex-direction: column;
-//         gap: 2.2rem;
-//     }
-
-//     &__title {
-//         font-size: 4rem;
-//         font-weight: bold;
-//     }
-
-//     &__text {
-//         color: $color-general-3;
-//         font-size: 1.6rem;
-//     }
-// }
-
 .story-section {
-    width: 100%;
     max-width: 130rem;
     margin: 0 auto;
     padding: 0 2rem;
@@ -82,17 +49,16 @@
     }
 }
 
-
-// ─────────────────────────────
-// Tablet
-// ─────────────────────────────
-
+// RESPONSIVE
+// TABLET
 @media (max-width: 56.25em) {
     .story {
         grid-template-columns: 1fr;
 
         &__img-box {
-            max-height: 45rem;
+            img {
+                width: 95%;
+            }
         }
 
         &__text-box {
@@ -101,24 +67,24 @@
     }
 }
 
-
-// ─────────────────────────────
-// Mobile
-// ─────────────────────────────
-
+// MOBILE
 @media (max-width: 37.5em) {
     .story-section {
         padding: 0 1.6rem;
     }
 
     .story {
-        padding: 5rem 0;
+        width: 90%;
+        padding: 5rem 2rem;
 
         &__img-box {
-            max-height: 30rem;
+            img {
+                width: 95%;
+            }
         }
 
         &__text-box {
+            width: 90%;
             padding: 3rem 0;
             gap: 1.6rem;
         }

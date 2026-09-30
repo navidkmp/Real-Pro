@@ -9,6 +9,8 @@
     grid-template-columns: 1fr 40rem;
     gap: 7rem;
 
+    align-items: start;
+
     &__order {
         padding: 3rem;
         border: 1px solid $color-primary-light-6;

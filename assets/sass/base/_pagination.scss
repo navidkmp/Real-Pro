@@ -12,7 +12,6 @@
         li a {
             text-decoration: none;
             color: $color-general-3;
-
             transition:
                 color 0.3s ease,
                 transform 0.3s ease;
@@ -33,8 +32,8 @@
 }
 
 // RESPONSIVE
+// TABLET
 @media (max-width: 48em) {
-
     .pagination {
         margin-top: 5rem;
 
@@ -49,9 +48,8 @@
     }
 }
 
-
+// MOBILE
 @media (max-width: 30em) {
-
     .pagination {
         margin-top: 4rem;
 

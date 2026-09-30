@@ -1,7 +1,7 @@
 {% extends 'base.html' %}{% load static %}
 
 {% block title %}
-    shop
+    shop || Real pro
 {% endblock %}
 
 {% block content %}
@@ -24,11 +24,8 @@
                             </span> <span class="shop__item__price">
                                 ${{ product.price }}
                             </span>
-                            <a href="{% url 'shop:add_to_cart' product.id %}" class="btn btn--full btn--shop"> add to cart </a>
+                            <a href="{% url 'shop:add_to_cart' product.id %}" class="btn btn--full "> add to cart </a>
                         </article>
-
-                    {% empty %}
-                        <p>No products available.</p>
                     {% endfor %}
                 </div>
                 <!-- shopping cart  -->

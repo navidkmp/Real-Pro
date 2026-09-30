@@ -1,71 +1,117 @@
 .team-section {
     max-width: 130rem;
     margin: 0 auto;
+    padding: 0 3rem;
 }
 
 .team {
     max-width: 100rem;
-    padding: 3rem 0;
+    margin: 0 auto;
+    padding: 5rem 0;
+
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    margin: 0 auto;
+    gap: 4rem;
 
+    // تمام آیتم‌های داخل گرید
     &>* {
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
+    // عکس‌ها
     &__img {
         width: 80%;
+        max-width: 28rem;
+        display: block;
+        margin: 0 auto;
+        object-fit: cover;
     }
 }
 
-// ─────────────────────────────────────
-// Tablet
-// ─────────────────────────────────────
+
+// =========================
+// TABLET
+// =========================
 
 @media (max-width: 56.25em) {
+
     .team-section {
         padding: 0 3rem;
     }
 
     .team {
-        padding: 2.5rem 0;
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 2.5rem;
+        max-width: 70rem;
+        padding: 4rem 0;
+
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem 3rem;
 
         &>* {
             width: 100%;
-            max-width: 40rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__img {
+            width: 75%;
+            max-width: 26rem;
         }
     }
 }
 
 
-// ─────────────────────────────────────
-// Mobile
-// ─────────────────────────────────────
+// =========================
+// MOBILE
+// =========================
 
 @media (max-width: 37.5em) {
+
     .team-section {
         padding: 0 1.6rem;
     }
 
     .team {
-        padding: 2rem 0;
+        max-width: 45rem;
+        padding: 3.5rem 0;
+
         grid-template-columns: 1fr;
-        // gap: 3rem;
+        gap: 3.5rem;
+
+        &>* {
+            width: 100%;
+            justify-content: center;
+        }
+
+        &__img {
+            width: 70%;
+            max-width: 25rem;
+            margin: 0 auto;
+        }
     }
 }
 
 
-// ─────────────────────────────────────
-// Small Mobile
-// ─────────────────────────────────────
+// =========================
+// SMALL MOBILE
+// =========================
 
 @media (max-width: 25em) {
+
+    .team-section {
+        padding: 0 1.2rem;
+    }
+
     .team {
-        padding: 1.5rem 0;
-        gap: 2.5rem;
+        padding: 2.5rem 0;
+        gap: 3rem;
+
+        &__img {
+            width: 75%;
+            max-width: 22rem;
+        }
     }
 }

@@ -1,5 +1,4 @@
 .about-section {
-    width: 100%;
     max-width: 130rem;
     margin: 0 auto;
     padding: 0 2rem;
@@ -12,14 +11,14 @@
 
         span {
             width: 90%;
+            margin: 0 auto;
+            display: block;
             font-size: 1.6rem;
         }
-
     }
 
     &__img-box {
-        width: 100%;
-        overflow: hidden;
+        // overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -39,17 +38,11 @@
 // Tablet
 @media (max-width: 56.25em) {
     .about {
-        &__top {
-            width: 90%;
-        }
-
         &__img-box {
             width: 90%;
         }
     }
-
 }
-
 
 // Mobile
 @media (max-width: 37.5em) {
@@ -58,17 +51,21 @@
     }
 
     .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
         &__top {
-            margin-bottom: -6rem;
+            margin-bottom: -5rem;
         }
 
-        img {
+        &__img-box {
             width: 100%;
+            margin: 6rem 0;
         }
-    }
 
-    .about__img-box {
-        aspect-ratio: 4 / 3;
-        border-radius: 0.8rem;
+        &__img {
+            width: 90%;
+        }
     }
 }

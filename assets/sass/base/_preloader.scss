@@ -168,6 +168,8 @@
     }
 }
 
+// RESPONSIVE
+// TABLET
 @media only screen and (max-width: 56.25em) {
     .preloader {
         &__logo-box {
@@ -189,6 +191,7 @@
     }
 }
 
+// MOBILE
 @media only screen and (max-width: 37.5em) {
     .preloader {
         &__logo-box {
@@ -221,6 +224,7 @@
     }
 }
 
+// SMALL MOBILE
 @media only screen and (max-width: 25em) {
     .preloader {
         &__logo-box {

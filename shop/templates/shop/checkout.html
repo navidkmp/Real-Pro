@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Checkout
+    Checkout || Real pro
 {% endblock %}
 
 {% block content %}
@@ -80,13 +80,13 @@
                                     <span>
                                         Subtotal
                                     </span> <span>
-                                        ${{ total }}
+                                        ${{ total|floatformat:2 }}
                                     </span>
                                 </div>
                                 <div class="order-box__row order-box__row--total">
                                     <span>
                                         Total
-                                    </span> <strong> ${{ total }}
+                                    </span> <strong> ${{ total|floatformat:2 }}
                                 </strong>
                                 </div>
                             </div>

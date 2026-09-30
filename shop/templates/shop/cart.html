@@ -1,17 +1,16 @@
-```html{% extends 'base.html' %}{% load static %}
+{% extends 'base.html' %}
+{% load static %}
 
 {% block title %}
-    Cart
+    Cart || Real pro
 {% endblock %}
 
 {% block content %}
-
     <!-- start cart -->
     <section class="cart-section">
         <div class="cart">
             <div class="cart__products">
                 {% for item in cart_items %}
-
                     <div class="product">
                         <!-- delete -->
                         <a href="{% url 'shop:remove' item.id %}" class="btn btn--transparent btn--delete">
@@ -22,26 +21,18 @@
                         </a>
                         <!-- product image -->
                         {% if item.product.image %}
-
                             <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" class="product__img">
-
                         {% else %}
-
                             <img src="{% static 'img/cart/cart-img.png' %}" alt="{{ item.product.name }}" class="product__img">
-
                         {% endif %}
-
-
                         <!-- product name -->
                         <div>
-
                             <span class="product__text">
                                 {{ item.product.name }}
                             </span>
                         </div>
                         <!-- price + quantity -->
                         <div class="product__price-box">
-
                             <span>
                                 ${{ item.product.price }}
                             </span>
@@ -65,22 +56,10 @@
                             </div>
                         </div>
                     </div>
-
                 {% empty %}
-
-                    <!-- empty cart -->
-                    <div class="cart__empty">
-                        <h3>
-                            Your cart is empty. </h3>
-                        <a href="{% url 'shop:shop' %}" class="btn btn--full"> Continue shopping </a>
-                    </div>
-
                 {% endfor %}
             </div>
-
-
             {% if cart_items %}
-
                 <div class="cart__order">
                     <h3 class="heading-3">
                         Cart totals </h3>
@@ -88,7 +67,6 @@
                     <form method="POST" action="{% url 'shop:check_coupon' %}">
                         {% csrf_token %}
                         <div class="cart__coupon">
-
                             <span>
                                 coupon
                             </span>
@@ -100,36 +78,19 @@
                             <span class="cart__total">
                                 Total
                             </span> <span class="cart__price">
-                                ${{ total }}
+                                ${{ total|floatformat:2 }}
                             </span>
                         </div>
                         <!-- checkout -->
                         <div class="cart__btn">
-                            <a href="{% url 'shop:checkout' %}" class="btn btn--full"> Proceed to checkout </a>
+                            <a href="{% url 'shop:checkout' %}" class="btn btn--full"> Proceed </a>
                             <button type="submit" class="btn btn--full">
                                 Check coupon
                             </button>
                         </div>
                     </form>
-                    <!-- messages -->
-                    {% if messages %}
-
-                        {% for message in messages %}
-
-                            <p class="coupon-message">
-                                {{ message }}
-                            </p>
-
-                        {% endfor %}
-
-                    {% endif %}
                 </div>
-
             {% endif %}
         </div>
     </section>
-
-    <!-- end cart -->
-
 {% endblock %}
-```
