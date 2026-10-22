@@ -54,7 +54,3 @@ https://real-pro-m08n.onrender.com/
 **Navid**
 
 GitHub: https://github.com/navidkmp/Real-Pro
-
-## 🤝 Collaborator
-
-**[elyardev](https://github.com/elyardev)**
